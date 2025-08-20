@@ -1,0 +1,24 @@
+{
+  "permissions": {
+    "allow": [
+      "Bash(npm run typecheck:*)",
+      "Bash(npm run lint)",
+      "Bash(npm run dev:*)",
+      "Bash(git restore:*)",
+      "WebFetch(domain:wplace.org)",
+      "WebFetch(domain:www.wplace.pro)",
+      "WebFetch(domain:wplacepixel.pro)",
+      "WebFetch(domain:wplacepixel.online)",
+      "WebFetch(domain:wplace.art)",
+      "WebFetch(domain:wplacepixelart.app)",
+      "WebFetch(domain:wplace.life)",
+      "Bash(dir:*)",
+      "Bash(magick convert:*)",
+      "Bash(convert:*)",
+      "Bash(node:*)",
+      "Bash(del generate-logos.js)",
+      "Bash(rm:*)"
+    ],
+    "deny": []
+  }
+}

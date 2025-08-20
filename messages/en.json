@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "name": "MkSaaS",
-    "title": "MkSaaS - The Best AI SaaS Boilerplate",
-    "description": "MkSaaS is the best AI SaaS boilerplate. Make AI SaaS in days, simply and effortlessly"
+    "name": "wplace pixel art",
+    "title": "Wplace Pixel Art Generator - Convert Images to Pixel Art",
+    "description": "Free online pixel art converter for Wplace.live. Transform any image into 64-color pixel art instantly. Official palette, drag & drop upload, and export tools."
   },
   "Common": {
     "login": "Log in",
@@ -623,42 +623,42 @@
     "title": "MkSaaS",
     "description": "Make AI SaaS in days, simply and effortlessly",
     "hero": {
-      "title": "Wplace Pixel Art Generator",
-      "description": "Transform your images into pixel art compatible with Wplace game palette. Upload any image and convert it to authentic pixel art style.",
+      "title": "Wplace Pixel Art Generator - Convert Images to Pixel Art",
+      "description": "Transform any image into stunning pixel art for Wplace.live. Our free converter uses the official 64-color palette to create perfect pixel art instantly.",
       "introduction": "Introducing Wplace Pixel Generator",
       "primary": "Start Creating",
       "secondary": "See Demo",
       "pixelGenerator": {
         "upload": {
-          "title": "Upload Image",
-          "description": "Click to upload or drag image here",
-          "supportedFormats": "Supports PNG, JPG, SVG formats (no size limit)"
+          "title": "Upload & Convert",
+          "description": "Drop image here or click to browse",
+          "supportedFormats": "PNG, JPG, SVG • Up to 5MB • Optimized for Wplace.live"
         },
         "pixelSize": {
-          "label": "Pixel Size: {size}",
-          "description": "Auto-converts as you adjust the slider"
+          "label": "Pixel Size: {size}px",
+          "description": "Adjust grid size for optimal results on Wplace.live"
         },
         "palette": {
-          "title": "Custom Palette (32 colors)",
+          "title": "Wplace Color Palette",
           "official": "Official Palette (64)",
           "custom": "Custom Palette (32)",
           "useSelected": "Use only selected colors",
-          "selectFree": "Choose all free colors",
+          "selectFree": "Select Free",
           "selectAll": "Select All",
-          "clear": "Clear",
-          "selectedCount": "Selected: {count}/{total} colors",
-          "clickToSelect": "Click to select/deselect colors. Locked colors are premium paid colors.",
-          "officialPalette": "Official Wplace 64-color palette - complete match with the game"
+          "clear": "Clear All",
+          "selectedCount": "Selected: {count} / {total}",
+          "clickToSelect": "Click colors to select/deselect",
+          "officialPalette": "Official 64-color palette"
         },
         "result": {
-          "title": "Wplace Pixel Paint Result",
-          "hoverInfo": "Hover over the image to get the corresponding color palette information",
+          "title": "Pixel Art Preview",
+          "hoverInfo": "Hover over pixels to see coordinates and colors • Drag to pan • Use zoom controls below",
           "downloadWithGrid": "Download with Grid",
           "download": "Download",
           "stats": {
             "horizontal": "Horizontal:",
             "vertical": "Vertical:",
-            "total": "Total:"
+            "total": "Total Pixels"
           },
           "controls": {
             "grid": "Grid:",
@@ -725,25 +725,25 @@
       "secondaryButton": "See Demo"
     },
     "features": {
-      "title": "Features",
-      "subtitle": "The features of your product",
-      "description": "Write the description of your product here",
+      "title": "Powerful Pixel Art Conversion Features",
+      "subtitle": "Convert Images to Wplace Art",
+      "description": "Transform any image into stunning pixel art ready for Wplace.live with our advanced conversion tools and official color palette.",
       "items": {
         "item-1": {
-          "title": "Product Feature One",
-          "description": "Please write the detailed description of feature one here, make it as detailed as possible, make it more attractive to users"
+          "title": "Drag & Drop Image Upload",
+          "description": "Simply drag your images into the converter or click to browse. Supports PNG, JPG, and SVG files up to 5MB. Our intelligent preprocessing optimizes your image for the best pixel art conversion results."
         },
         "item-2": {
-          "title": "Product Feature Two",
-          "description": "Please write the detailed description of feature two here, make it as detailed as possible, make it more attractive to users"
+          "title": "Official Wplace 64-Color Palette",
+          "description": "Use the exact same color palette as Wplace.live with 64 carefully selected colors. Choose between free colors (available 24/7) and premium colors for the perfect artistic expression. Apply quick color themes or select individual colors."
         },
         "item-3": {
-          "title": "Product Feature Three",
-          "description": "Please write the detailed description of feature three here, make it as detailed as possible, make it more attractive to users"
+          "title": "Real-time Preview & Controls",
+          "description": "Watch your pixel art come to life with instant previews. Adjust pixel size, zoom in/out, drag to pan, and hover to see exact coordinates and color information. Grid overlay helps with precise placement planning."
         },
         "item-4": {
-          "title": "Product Feature Four",
-          "description": "Please write the detailed description of feature four here, make it as detailed as possible, make it more attractive to users"
+          "title": "Export for Wplace.live",
+          "description": "Download your pixel art as clean PNG files or with grid overlays for planning. Get detailed statistics about colors used, time requirements, and free vs premium pixel counts. One click to open Wplace.live and start placing!"
         }
       }
     },
@@ -793,88 +793,100 @@
       "description": "Choose the plan that works best for you"
     },
     "faqs": {
-      "title": "FAQ",
-      "subtitle": "Frequently Asked Questions",
+      "title": "Frequently Asked Questions",
+      "subtitle": "Everything you need to know about converting images to Wplace pixel art",
       "items": {
         "item-1": {
-          "question": "Do you offer a free trial?",
-          "answer": "Yes, we offer a 7-day free trial."
+          "question": "What is Wplace.live and how does this converter help?",
+          "answer": "Wplace.live is a massive collaborative pixel art canvas with 4 trillion pixels - a million times bigger than Reddit's r/place. Our converter transforms any image into pixel art using the official 64-color palette, making it easy to create art for the platform."
         },
         "item-2": {
-          "question": "How do I cancel my subscription?",
-          "answer": "You can cancel your subscription by visiting the billing page."
+          "question": "What image formats are supported?",
+          "answer": "We support PNG, JPG, and SVG files up to 5MB. The converter automatically optimizes your image for the best pixel art conversion results using the official Wplace color palette."
         },
         "item-3": {
-          "question": "Can I change my plan?",
-          "answer": "Yes, you can change your plan at any time by visiting the billing page."
+          "question": "How long does it take to place pixel art on Wplace.live?",
+          "answer": "Each pixel has a 30-second cooldown (same as the original r/place). Our converter shows you the exact time estimate based on your pixel count, so you can plan your projects accordingly."
         },
         "item-4": {
-          "question": "What is the refund policy?",
-          "answer": "We offer a 30-day money-back guarantee if you are not happy with our product."
+          "question": "What's the difference between free and premium colors?",
+          "answer": "Wplace.live has 64 colors total: some are free (available 24/7) and others are premium (require paid placement). Our converter identifies which colors you're using and shows the breakdown so you can optimize costs."
         },
         "item-5": {
-          "question": "Can't find what you're looking for?",
-          "answer": "Please contact our customer support team at support@mksaas.com"
+          "question": "How do I use the exported pixel art on Wplace.live?",
+          "answer": "Download your pixel art as a clean PNG or with grid overlay for planning. Use the coordinates and color information to place pixels precisely on Wplace.live. We also provide a direct link to open the platform."
+        },
+        "item-6": {
+          "question": "Can I collaborate with others on pixel art projects?",
+          "answer": "Yes! Export your pixel art with grid overlays and coordinate information to share with your team. Many communities use our converter to plan collaborative projects on Wplace.live."
+        },
+        "item-7": {
+          "question": "How accurate is the color conversion?",
+          "answer": "We use advanced color matching algorithms to find the closest colors in the official 64-color Wplace palette. You can also manually select which colors to use for complete control over the conversion."
+        },
+        "item-8": {
+          "question": "Is the converter free to use?",
+          "answer": "Yes! Our pixel art converter is completely free. We provide unlimited conversions, real-time previews, and all export features at no cost. Just upload, convert, and create!"
         }
       }
     },
     "testimonials": {
-      "title": "Testimonials",
-      "subtitle": "What our customers are saying",
+      "title": "Loved by Pixel Artists Worldwide",
+      "subtitle": "See what creators are saying about our Wplace pixel art converter",
       "items": {
         "item-1": {
-          "name": "Jonathan Yombo",
-          "role": "Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/1.jpg",
-          "quote": "MkSaaS is really extraordinary and very practical, no need to break your head. A real gold mine."
+          "name": "Nori",
+          "role": "Community Lead, PixelArt Guild",
+          "image": "/avatars/nori.jpg",
+          "quote": "We kicked off a city crest in under twenty minutes. The converter made it so easy to get our design onto Wplace.live perfectly!"
         },
         "item-2": {
-          "name": "Yves Kalume",
-          "role": "GDE - Android",
-          "image": "https://randomuser.me/api/portraits/men/6.jpg",
-          "quote": "With no experience in webdesign I just redesigned my entire website in a few minutes with tailwindcss thanks to MkSaaS."
+          "name": "Nika",
+          "role": "Pixel Art Hobbyist",
+          "image": "/avatars/nika.jpg",
+          "quote": "Now I lock a 16-color palette, check map pixel alignment, and boom - I know exactly where to place each pixel. Game changer!"
         },
         "item-3": {
-          "name": "Yucel Faruksahan",
-          "role": "Tailkits Creator",
-          "image": "https://randomuser.me/api/portraits/men/7.jpg",
-          "quote": "Great work on MkSaaS template. This is one of the best personal website that I have seen so far :)"
+          "name": "Mateo",
+          "role": "Team Captain, Digital Artists",
+          "image": "/avatars/mateo.jpg",
+          "quote": "Exports are practical for our team coordination. Our coordination pings dropped by about 40% since using this tool."
         },
         "item-4": {
-          "name": "Anonymous author",
-          "role": "Product Manager",
-          "image": "https://randomuser.me/api/portraits/men/8.jpg",
-          "quote": "I downloaded the one of MkSaaS template which is very clear to understand at the start and you could modify the codes/blocks to fit perfectly on your purpose of the page."
+          "name": "Sarah Chen",
+          "role": "Art Student",
+          "image": "/avatars/sarah.jpg",
+          "quote": "The official 64-color palette integration is perfect. No more guessing if my colors will work on Wplace.live!"
         },
         "item-5": {
-          "name": "Shekinah Tshiokufila",
-          "role": "Senior Software Engineer",
-          "image": "https://randomuser.me/api/portraits/men/4.jpg",
-          "quote": "MkSaaS is redefining the standard of web design, with these blocks it provides an easy and efficient way for those who love beauty but may lack the time to implement it."
+          "name": "Alex Rodriguez",
+          "role": "Collaborative Artist",
+          "image": "/avatars/alex.jpg",
+          "quote": "Time estimates are super helpful for planning our group projects. We can see exactly how long each piece will take."
         },
         "item-6": {
-          "name": "Oketa Fred",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/2.jpg",
-          "quote": "I absolutely love MkSaaS! The component blocks are beautifully designed and easy to use, which makes creating a great-looking website a breeze."
+          "name": "Jamie Thompson",
+          "role": "Digital Designer",
+          "image": "/avatars/jamie.jpg",
+          "quote": "The drag and drop interface is intuitive, and the real-time preview makes it easy to fine-tune before committing."
         },
         "item-7": {
-          "name": "Zeki",
-          "role": "Founder of ChatExtend",
-          "image": "https://randomuser.me/api/portraits/men/5.jpg",
-          "quote": "MkSaaS is the perfect fusion of simplicity and versatility, enabling us to create UIs that are as stunning as they are user-friendly."
+          "name": "Morgan Kim",
+          "role": "Pixel Artist",
+          "image": "/avatars/morgan.jpg",
+          "quote": "Love the grid overlay feature! It helps so much with precise placement planning on the massive Wplace canvas."
         },
         "item-8": {
-          "name": "Joseph Kitheka",
-          "role": "Fullstack Developer",
-          "image": "https://randomuser.me/api/portraits/men/9.jpg",
-          "quote": "MkSaaS has transformed the way I develop web applications. Their extensive collection of UI components, blocks, and templates has significantly accelerated my workflow."
+          "name": "River Johnson",
+          "role": "Art Community Organizer",
+          "image": "/avatars/river.jpg",
+          "quote": "Our community uses this for all our Wplace projects. The free vs premium pixel breakdown is incredibly useful."
         },
         "item-9": {
-          "name": "Khatab Wedaa",
-          "role": "MerakiUI Creator",
-          "image": "https://randomuser.me/api/portraits/men/10.jpg",
-          "quote": "MkSaaS is an elegant, clean, and responsive tailwind css components it's very helpful to start fast with your project."
+          "name": "Taylor Davis",
+          "role": "Freelance Artist",
+          "image": "/avatars/taylor.jpg",
+          "quote": "Best pixel art converter I've used for Wplace. The color themes feature saves me so much time in planning."
         },
         "item-10": {
           "name": "Rodrigo Aguilar",
@@ -912,11 +924,62 @@
         }
       }
     },
+    "howToUse": {
+      "title": "How to Convert Images to Pixel Art",
+      "subtitle": "Simple 5-Step Process",
+      "description": "Transform any image into Wplace-ready pixel art in minutes. Follow our step-by-step guide to create amazing collaborative art.",
+      "steps": {
+        "step1": {
+          "number": "01",
+          "title": "Upload Your Image",
+          "description": "Drag and drop your PNG, JPG, or SVG file (up to 5MB) into the converter. Our tool instantly analyzes your image for optimal pixel art conversion.",
+          "tip": "💡 Tip: Images with clear shapes and defined colors work best for pixel art conversion.",
+          "features": ["PNG Support", "JPG Support", "SVG Support", "Up to 5MB"]
+        },
+        "step2": {
+          "number": "02",
+          "title": "Customize Settings",
+          "description": "Adjust pixel size from 1px (ultra detail) to 50px (simple). Select from the official 64-color Wplace palette or choose specific color themes.",
+          "tip": "🎨 Pro tip: Use smaller pixel sizes for detailed artwork, larger sizes for simple designs or faster placement.",
+          "pixelRange": "Pixel Size Range: 1px - 50px",
+          "colorPalette": "Color Palette: Official 64 colors"
+        },
+        "step3": {
+          "number": "03",
+          "title": "Preview & Refine",
+          "description": "Watch your pixel art come to life with real-time preview. Zoom, pan, and hover over pixels to see coordinates and color information.",
+          "tip": "🔍 Use the grid overlay to plan precise placement on Wplace.live's massive canvas.",
+          "controls": ["Zoom Controls", "Pan & Drag", "Coordinate Display", "Color Info"]
+        },
+        "step4": {
+          "number": "04",
+          "title": "Export Your Art",
+          "description": "Download as clean PNG or with grid overlay for planning. Get detailed statistics about colors used, time estimates, and pixel counts.",
+          "tip": "📊 Check free vs premium pixel breakdown to optimize your placement strategy.",
+          "downloadClean": "Download Clean PNG",
+          "downloadGrid": "Download with Grid"
+        },
+        "step5": {
+          "number": "05",
+          "title": "Start Placing on Wplace.live",
+          "description": "Use our direct link to open Wplace.live and start placing your pixels. Each pixel has a 30-second cooldown, just like the original r/place.",
+          "tip": "🌍 Coordinate with friends or communities for large collaborative art projects!",
+          "openWplace": "🌍 Open Wplace.live",
+          "cooldownNote": "30-second cooldown per pixel placement"
+        }
+      },
+      "cta": {
+        "title": "Ready to Start Converting?",
+        "description": "Join thousands of artists creating amazing pixel art on Wplace.live. Our converter makes it easy to transform any image into collaborative art.",
+        "button": "Try the Converter Now"
+      }
+    },
     "calltoaction": {
-      "title": "Start Building",
-      "description": "MkSaaS lets you make AI SaaS in days, simply and effortlessly",
-      "primaryButton": "Get Started",
-      "secondaryButton": "See Demo"
+      "title": "Ready to Create Amazing Pixel Art?",
+      "description": "Transform your images into stunning pixel art for Wplace.live in seconds. Join thousands of artists creating on the world's largest collaborative canvas.",
+      "primaryButton": "🎨 Start Converting Now",
+      "secondaryButton": "🌍 Visit Wplace.live",
+      "features": ["Completely Free", "Official 64-Color Palette", "Instant Results"]
     },
     "pointsTest": {
       "title": "Points Consumption Test",

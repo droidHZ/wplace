@@ -24,20 +24,20 @@ export async function generateMetadata({
 
   return constructMetadata({
     title:
-      'Wplace Pixel Art Generator - Convert Images to Pixel Art',
+      'Image to Pixel Art - Free Online Converter Tool',
     description:
-      'Free online pixel art converter for Wplace.live. Transform any image into 64-color pixel art instantly. Official palette, drag & drop upload, and export tools.',
-    canonicalUrl: getUrlWithLocale('/', locale),
+      'Convert any image to stunning pixel art instantly. Free online tool with official Wplace.live color palette. Drag & drop upload, real-time preview.',
+    canonicalUrl: getUrlWithLocale('/image-to-pixel', locale),
     keywords:
       'wplace, pixel art, converter, wplace.live, r/place, collaborative art, image to pixel, online tool, free converter',
   });
 }
 
-interface HomePageProps {
+interface ImageToPixelPageProps {
   params: Promise<{ locale: Locale }>;
 }
 
-export default async function HomePage(props: HomePageProps) {
+export default async function ImageToPixelPage(props: ImageToPixelPageProps) {
   const params = await props.params;
   const { locale } = params;
   const t = await getTranslations('HomePage');

@@ -8,7 +8,7 @@ import {
   AccordionTrigger,
 } from '@/components/ui/accordion';
 import type { IconName } from 'lucide-react/dynamic';
-import { useLocale, useTranslations } from 'next-intl';
+import { useTranslations } from 'next-intl';
 
 type FAQItem = {
   id: string;
@@ -18,39 +18,56 @@ type FAQItem = {
 };
 
 export default function FaqSection() {
-  const locale = useLocale();
   const t = useTranslations('HomePage.faqs');
 
   const faqItems: FAQItem[] = [
     {
       id: 'item-1',
-      icon: 'calendar-clock',
+      icon: 'palette',
       question: t('items.item-1.question'),
       answer: t('items.item-1.answer'),
     },
     {
       id: 'item-2',
-      icon: 'wallet',
+      icon: 'upload',
       question: t('items.item-2.question'),
       answer: t('items.item-2.answer'),
     },
     {
       id: 'item-3',
-      icon: 'refresh-cw',
+      icon: 'clock',
       question: t('items.item-3.question'),
       answer: t('items.item-3.answer'),
     },
     {
       id: 'item-4',
-      icon: 'hand-coins',
+      icon: 'coins',
       question: t('items.item-4.question'),
       answer: t('items.item-4.answer'),
     },
     {
       id: 'item-5',
-      icon: 'mail',
+      icon: 'download',
       question: t('items.item-5.question'),
       answer: t('items.item-5.answer'),
+    },
+    {
+      id: 'item-6',
+      icon: 'users',
+      question: t('items.item-6.question'),
+      answer: t('items.item-6.answer'),
+    },
+    {
+      id: 'item-7',
+      icon: 'eye',
+      question: t('items.item-7.question'),
+      answer: t('items.item-7.answer'),
+    },
+    {
+      id: 'item-8',
+      icon: 'zap',
+      question: t('items.item-8.question'),
+      answer: t('items.item-8.answer'),
     },
   ];
 

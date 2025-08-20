@@ -79,24 +79,6 @@ export default function TestimonialsSection() {
       image: t('items.item-9.image'),
       quote: t('items.item-9.quote'),
     },
-    {
-      name: t('items.item-10.name'),
-      role: t('items.item-10.role'),
-      image: t('items.item-10.image'),
-      quote: t('items.item-10.quote'),
-    },
-    {
-      name: t('items.item-11.name'),
-      role: t('items.item-11.role'),
-      image: t('items.item-11.image'),
-      quote: t('items.item-11.quote'),
-    },
-    {
-      name: t('items.item-12.name'),
-      role: t('items.item-12.role'),
-      image: t('items.item-12.image'),
-      quote: t('items.item-12.quote'),
-    },
   ];
 
   const testimonialChunks = chunkArray(

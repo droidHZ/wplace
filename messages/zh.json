@@ -1,8 +1,8 @@
 {
   "Metadata": {
-    "name": "MkSaaS",
-    "title": "MkSaaS - 最好的 AI SaaS 模板",
-    "description": "MkSaaS 是构建 AI SaaS 的最佳模板，使用 MkSaaS 可以在几天内轻松构建您的 AI SaaS，简单且毫不费力。"
+    "name": "wplace pixel art",
+    "title": "Wplace像素画生成器 - 免费图片转像素画工具",
+    "description": "免费在线像素画转换器，支持Wplace.live官方64色调色板。一键将任意图片转换为像素艺术，支持拖拽上传和导出功能，完美适配协作创作。"
   },
   "Common": {
     "login": "登录",
@@ -623,42 +623,42 @@
     "title": "MkSaaS",
     "description": "使用 MkSaaS 在几天内轻松构建您的 AI SaaS 产品",
     "hero": {
-      "title": "Wplace 像素画生成器",
-      "description": "将您的图片转换为与 Wplace 游戏调色板兼容的像素画。上传任意图片并转换为正宗的像素画风格。",
+      "title": "Wplace像素画生成器 - 免费图片转像素画工具",
+      "description": "免费将任意图片转换为精美像素艺术，完美适配Wplace.live平台。使用官方64色调色板，即时转换，一键导出像素画作品。",
       "introduction": "介绍 Wplace 像素生成器",
       "primary": "开始创作",
       "secondary": "查看演示",
       "pixelGenerator": {
         "upload": {
-          "title": "上传图片",
-          "description": "点击上传或拖拽图片到此处",
-          "supportedFormats": "支持 PNG、JPG、SVG 格式（无大小限制）"
+          "title": "上传与转换",
+          "description": "拖拽图片到此处或点击浏览",
+          "supportedFormats": "PNG、JPG、SVG • 最大 5MB • 为 Wplace.live 优化"
         },
         "pixelSize": {
-          "label": "像素大小：{size}",
-          "description": "调整滑块时自动转换"
+          "label": "像素大小：{size}px",
+          "description": "调整网格大小以在 Wplace.live 上获得最佳效果"
         },
         "palette": {
-          "title": "自定义调色板（32色）",
+          "title": "Wplace 调色板",
           "official": "官方调色板（64色）",
           "custom": "自定义调色板（32色）",
           "useSelected": "仅使用选中的颜色",
-          "selectFree": "选择所有免费颜色",
+          "selectFree": "选择免费",
           "selectAll": "全选",
-          "clear": "清除",
-          "selectedCount": "已选择：{count}/{total} 色",
-          "clickToSelect": "点击选择/取消选择颜色。锁定的颜色为付费高级颜色。",
-          "officialPalette": "官方 Wplace 64色调色板 - 与游戏完全匹配"
+          "clear": "清除全部",
+          "selectedCount": "已选择：{count} / {total}",
+          "clickToSelect": "点击颜色以选择/取消选择",
+          "officialPalette": "官方 64色调色板"
         },
         "result": {
-          "title": "Wplace 像素画结果",
-          "hoverInfo": "悬停在图片上以获取相应的调色板信息",
+          "title": "像素艺术预览",
+          "hoverInfo": "悬停在像素上查看坐标和颜色 • 拖拽平移 • 使用下面的缩放控件",
           "downloadWithGrid": "下载带网格版本",
           "download": "下载",
           "stats": {
             "horizontal": "水平：",
             "vertical": "垂直：",
-            "total": "总计："
+            "total": "总像素"
           },
           "controls": {
             "grid": "网格：",
@@ -725,25 +725,25 @@
       "secondaryButton": "查看演示"
     },
     "features": {
-      "title": "功能",
-      "subtitle": "您的 SaaS 产品功能",
-      "description": "请在这里介绍您的 SaaS 产品的特色功能的信息",
+      "title": "强大的像素艺术转换功能",
+      "subtitle": "将图片转换为 Wplace 艺术",
+      "description": "使用我们先进的转换工具和官方调色板，将任何图片转换为适用于 Wplace.live 的精美像素艺术。",
       "items": {
         "item-1": {
-          "title": "产品特色功能一",
-          "description": "请在这里详细描述您的产品特色功能一，尽可能详细，使其更吸引用户，提高落地页的转化率"
+          "title": "拖拽上传图片",
+          "description": "只需将图片拖拽到转换器中或点击浏览即可。支持 PNG、JPG 和 SVG 文件，最大 5MB。我们的智能预处理可优化您的图片以获得最佳的像素艺术转换效果。"
         },
         "item-2": {
-          "title": "产品特色功能二",
-          "description": "请在这里详细描述您的产品特色功能二，尽可能详细，使其更吸引用户，提高落地页的转化率"
+          "title": "官方 Wplace 64色调色板",
+          "description": "使用与 Wplace.live 完全相同的调色板，包含 64 种精心挑选的颜色。在免费颜色（24/7 可用）和高级颜色之间选择，实现完美的艺术表达。应用快速颜色主题或选择单独的颜色。"
         },
         "item-3": {
-          "title": "产品特色功能三",
-          "description": "请在这里详细描述您的产品特色功能三，尽可能详细，使其更吸引用户，提高落地页的转化率"
+          "title": "实时预览和控制",
+          "description": "通过即时预览观看您的像素艺术栩栩如生。调整像素大小、放大/缩小、拖拽平移，悬停查看精确的坐标和颜色信息。网格叠加有助于精确的放置规划。"
         },
         "item-4": {
-          "title": "产品特色功能四",
-          "description": "请在这里详细描述您的产品特色功能四，尽可能详细，使其更吸引用户，提高落地页的转化率"
+          "title": "导出到 Wplace.live",
+          "description": "下载您的像素艺术为清洁 PNG 文件或带有网格叠加以便规划。获取关于使用的颜色、时间要求以及免费与高级像素计数的详细统计信息。一键打开 Wplace.live 开始放置！"
         }
       }
     },
@@ -794,87 +794,99 @@
     },
     "faqs": {
       "title": "常见问题",
-      "subtitle": "如果您有任何问题，请随时联系我们",
+      "subtitle": "关于将图片转换为 Wplace 像素艺术您需要了解的一切",
       "items": {
         "item-1": {
-          "question": "你们提供免费试用吗？",
-          "answer": "是的，我们提供7天的免费试用。"
+          "question": "什么是 Wplace.live，这个转换器如何帮助？",
+          "answer": "Wplace.live 是一个拥有 4 万亿像素的大型协作像素艺术画布 - 比 Reddit 的 r/place 大一百万倍。我们的转换器使用官方 64 色调色板将任何图片转换为像素艺术，使为该平台创建艺术变得容易。"
         },
         "item-2": {
-          "question": "如何取消我的订阅？",
-          "answer": "您可以通过访问账单页面取消您的订阅。"
+          "question": "支持哪些图片格式？",
+          "answer": "我们支持最大 5MB 的 PNG、JPG 和 SVG 文件。转换器自动使用官方 Wplace 调色板优化您的图片以获得最佳的像素艺术转换效果。"
         },
         "item-3": {
-          "question": "我可以更改我的计划吗？",
-          "answer": "是的，您可以随时通过访问账单页面更改您的计划。"
+          "question": "在 Wplace.live 上放置像素艺术需要多长时间？",
+          "answer": "每个像素都有 30 秒的冷却时间（与原始 r/place 相同）。我们的转换器根据您的像素数量显示确切的时间估算，这样您就可以相应地规划您的项目。"
         },
         "item-4": {
-          "question": "你们的退款政策是什么？",
-          "answer": "是的，我们提供30天的退款保证。"
+          "question": "免费颜色和高级颜色有什么区别？",
+          "answer": "Wplace.live 总共有 64 种颜色：有些是免费的（24/7 可用），有些是高级的（需要付费放置）。我们的转换器识别您正在使用的颜色并显示分解，以便您可以优化成本。"
         },
         "item-5": {
-          "question": "找不到您想问的问题？",
-          "answer": "请联系我们的客户支持团队，邮箱地址：support@mksaas.com"
+          "question": "如何在 Wplace.live 上使用导出的像素艺术？",
+          "answer": "下载您的像素艺术为清洁 PNG 或带有网格叠加以便规划。使用坐标和颜色信息在 Wplace.live 上精确放置像素。我们还提供直接链接来打开平台。"
+        },
+        "item-6": {
+          "question": "我可以与他人合作进行像素艺术项目吗？",
+          "answer": "是的！导出带有网格叠加和坐标信息的像素艺术与您的团队分享。许多社区使用我们的转换器来规划 Wplace.live 上的协作项目。"
+        },
+        "item-7": {
+          "question": "颜色转换的准确性如何？",
+          "answer": "我们使用先进的颜色匹配算法在官方 64 色 Wplace 调色板中找到最接近的颜色。您还可以手动选择要使用的颜色以完全控制转换。"
+        },
+        "item-8": {
+          "question": "转换器免费使用吗？",
+          "answer": "是的！我们的像素艺术转换器完全免费。我们提供无限转换、实时预览和所有导出功能，无需任何费用。只需上传、转换和创建！"
         }
       }
     },
     "testimonials": {
-      "title": "客户评价",
-      "subtitle": "我们的客户对我们的评价",
+      "title": "受到全球像素艺术家的喜爱",
+      "subtitle": "看看创作者们对我们的 Wplace 像素艺术转换器的评价",
       "items": {
         "item-1": {
-          "name": "Jonathan Yombo",
-          "role": "软件工程师",
-          "image": "https://randomuser.me/api/portraits/men/1.jpg",
-          "quote": "MkSaaS 非常出色且实用，无需费心，一个真正的金矿。"
+          "name": "Nori",
+          "role": "像素艺术公会社区负责人",
+          "image": "/avatars/nori.jpg",
+          "quote": "我们在不到二十分钟内就启动了一个城市徽章项目。转换器让我们的设计完美地呈现在 Wplace.live 上变得如此简单！"
         },
         "item-2": {
-          "name": "Yves Kalume",
-          "role": "Android GDE",
-          "image": "https://randomuser.me/api/portraits/men/6.jpg",
-          "quote": "没有网页设计经验，我只需几分钟就可以用 Tailwindcss 重新设计我的整个网站，感谢 MkSaaS。"
+          "name": "Nika",
+          "role": "像素艺术爱好者",
+          "image": "/avatars/nika.jpg",
+          "quote": "现在我锁定 16 色调色板，检查地图像素对齐，然后砰 - 我就知道每个像素应该放在哪里了。游戏规则改变者！"
         },
         "item-3": {
-          "name": "Yucel Faruksahan",
-          "role": "Tailkits 创建者",
-          "image": "https://randomuser.me/api/portraits/men/7.jpg",
-          "quote": "MkSaaS 模板做得很好，这是我见过最好的 SaaS 模板，没有之一 :)"
+          "name": "Mateo",
+          "role": "数字艺术家团队队长",
+          "image": "/avatars/mateo.jpg",
+          "quote": "导出功能对我们的团队协调很实用。自从使用这个工具以来，我们的协调消息减少了大约 40%。"
         },
         "item-4": {
-          "name": "Anonymous author",
-          "role": "产品经理",
-          "image": "https://randomuser.me/api/portraits/men/8.jpg",
-          "quote": "我不熟悉 Tailwind，我想自己做一些页面，我在网上搜索了很多英雄页面和区块。然而，大多数都没有给我一个清晰的想法，或者需要一些 HTML/CSS 编码背景来从原始文件中做一些更改，或者太贵了。我下载了其中一个 MkSaaS 模板，它非常容易理解，你可以在开始时修改代码/区块以完美地适应你的页面目的。"
+          "name": "Sarah Chen",
+          "role": "艺术学生",
+          "image": "/avatars/sarah.jpg",
+          "quote": "官方 64 色调色板集成很完美。再也不用猜测我的颜色是否能在 Wplace.live 上工作了！"
         },
         "item-5": {
-          "name": "Shekinah Tshiokufila",
-          "role": "高级软件工程师",
-          "image": "https://randomuser.me/api/portraits/men/4.jpg",
-          "quote": "MkSaaS 正在重新定义网页设计标准，这些区块为那些喜欢美丽但可能缺乏时间实现它的人提供了简单且高效的方式。我只能推荐这个不可思议的奇迹。"
+          "name": "Alex Rodriguez",
+          "role": "协作艺术家",
+          "image": "/avatars/alex.jpg",
+          "quote": "时间估算对规划我们的小组项目非常有帮助。我们可以确切地看到每个作品需要多长时间。"
         },
         "item-6": {
-          "name": "Oketa Fred",
-          "role": "全栈开发工程师",
-          "image": "https://randomuser.me/api/portraits/men/2.jpg",
-          "quote": "我绝对喜欢 MkSaaS！这些组件区块设计精美且易于使用，使创建一个出色的网站变得轻而易举。"
+          "name": "Jamie Thompson",
+          "role": "数字设计师",
+          "image": "/avatars/jamie.jpg",
+          "quote": "拖放界面很直观，实时预览让我们可以在提交之前轻松进行微调。"
         },
         "item-7": {
-          "name": "Zeki",
-          "role": "ChatExtend 创始人",
-          "image": "https://randomuser.me/api/portraits/men/5.jpg",
-          "quote": "使用 MkSaaS 就像解锁了一个秘密的设计超能力。它是简单性和多功能性的完美融合，使我们能够创建既令人惊叹又用户友好的界面。"
+          "name": "Morgan Kim",
+          "role": "像素艺术家",
+          "image": "/avatars/morgan.jpg",
+          "quote": "喜欢网格叠加功能！它在庞大的 Wplace 画布上进行精确放置规划时帮助很大。"
         },
         "item-8": {
-          "name": "Joseph Kitheka",
-          "role": "全栈开发工程师",
-          "image": "https://randomuser.me/api/portraits/men/9.jpg",
-          "quote": "MkSaaS 改变了我的网页开发方式。他们的 UI 组件、区块和模板极大地加速了我的工作流程。定制每个方面的灵活性使我能够创建独特的用户体验。MkSaaS 是现代网页开发的游戏规则改变者！"
+          "name": "River Johnson",
+          "role": "艺术社区组织者",
+          "image": "/avatars/river.jpg",
+          "quote": "我们的社区在所有 Wplace 项目中都使用这个工具。免费与高级像素分解功能非常有用。"
         },
         "item-9": {
-          "name": "Khatab Wedaa",
-          "role": "MerakiUI 创建者",
-          "image": "https://randomuser.me/api/portraits/men/10.jpg",
-          "quote": "MkSaaS 是一个优雅、干净且响应式的 SaaS 模板，它非常有助于快速开始您的项目。"
+          "name": "Taylor Davis",
+          "role": "自由艺术家",
+          "image": "/avatars/taylor.jpg",
+          "quote": "这是我为 Wplace 使用过的最好的像素艺术转换器。颜色主题功能为我在规划方面节省了很多时间。"
         },
         "item-10": {
           "name": "Rodrigo Aguilar",
@@ -912,11 +924,62 @@
         }
       }
     },
+    "howToUse": {
+      "title": "如何将图片转换为像素艺术",
+      "subtitle": "简单的 5 步流程",
+      "description": "在几分钟内将任何图片转换为 Wplace 就绪的像素艺术。按照我们的分步指南创建令人惊叹的协作艺术。",
+      "steps": {
+        "step1": {
+          "number": "01",
+          "title": "上传您的图片",
+          "description": "将您的 PNG、JPG 或 SVG 文件（最大 5MB）拖放到转换器中。我们的工具会立即分析您的图片以进行最佳像素艺术转换。",
+          "tip": "💡 提示：具有清晰形状和明确颜色的图片最适合像素艺术转换。",
+          "features": ["支持 PNG", "支持 JPG", "支持 SVG", "最大 5MB"]
+        },
+        "step2": {
+          "number": "02",
+          "title": "自定义设置",
+          "description": "将像素大小从 1px（超高清）调整到 50px（简单）。从官方 64 色 Wplace 调色板中选择或选择特定颜色主题。",
+          "tip": "🎨 专业提示：对于详细的艺术作品使用较小的像素大小，对于简单设计或更快的放置使用较大的像素大小。",
+          "pixelRange": "像素大小范围：1px - 50px",
+          "colorPalette": "调色板：官方 64 色"
+        },
+        "step3": {
+          "number": "03",
+          "title": "预览和优化",
+          "description": "观看您的像素艺术通过实时预览栩栩如生。缩放、平移并悬停在像素上以查看坐标和颜色信息。",
+          "tip": "🔍 使用网格覆盖来规划在 Wplace.live 巨大画布上的精确放置。",
+          "controls": ["缩放控制", "平移和拖拽", "坐标显示", "颜色信息"]
+        },
+        "step4": {
+          "number": "04",
+          "title": "导出您的艺术",
+          "description": "下载为清洁 PNG 或带有网格覆盖以进行规划。获取有关使用的颜色、时间估计和像素计数的详细统计信息。",
+          "tip": "📊 检查免费与付费像素的分解以优化您的放置策略。",
+          "downloadClean": "下载清洁 PNG",
+          "downloadGrid": "下载带网格"
+        },
+        "step5": {
+          "number": "05",
+          "title": "在 Wplace.live 上开始放置",
+          "description": "使用我们的直接链接打开 Wplace.live 并开始放置您的像素。每个像素有 30 秒冷却时间，就像原始的 r/place 一样。",
+          "tip": "🌍 与朋友或社区协调进行大型协作艺术项目！",
+          "openWplace": "🌍 打开 Wplace.live",
+          "cooldownNote": "每个像素放置 30 秒冷却时间"
+        }
+      },
+      "cta": {
+        "title": "准备开始转换了吗？",
+        "description": "加入成千上万在 Wplace.live 上创作令人惊叹像素艺术的艺术家。我们的转换器让将任何图片转换为协作艺术变得简单。",
+        "button": "立即试用转换器"
+      }
+    },
     "calltoaction": {
-      "title": "开始构建",
-      "description": "MkSaaS 可让您在几天内轻松构建您的 AI SaaS",
-      "primaryButton": "开始使用",
-      "secondaryButton": "查看演示"
+      "title": "准备创建令人惊叹的像素艺术了吗？",
+      "description": "在几秒钟内将您的图片转换为适用于 Wplace.live 的精美像素艺术。加入成千上万在世界最大协作画布上创作的艺术家。",
+      "primaryButton": "🎨 立即开始转换",
+      "secondaryButton": "🌍 访问 Wplace.live",
+      "features": ["完全免费", "官方 64 色调色板", "即时结果"]
     },
     "pointsTest": {
       "title": "积分消费测试",

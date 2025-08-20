@@ -12,20 +12,30 @@ export default function CallToActionSection() {
           <h2 className="text-balance text-4xl font-semibold lg:text-5xl">
             {t('title')}
           </h2>
-          <p className="mt-4">{t('description')}</p>
+          <p className="mt-4 text-lg text-muted-foreground max-w-2xl mx-auto">
+            {t('description')}
+          </p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg">
-              <LocaleLink href="/">
+            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+              <LocaleLink href="/#hero">
                 <span>{t('primaryButton')}</span>
               </LocaleLink>
             </Button>
 
-            <Button asChild size="lg" variant="outline">
-              <LocaleLink href="/">
+            <Button asChild size="lg" variant="outline" className="border-border text-foreground hover:bg-muted">
+              <a href="https://wplace.live" target="_blank" rel="noopener noreferrer">
                 <span>{t('secondaryButton')}</span>
-              </LocaleLink>
+              </a>
             </Button>
+          </div>
+
+          <div className="mt-8 flex justify-center items-center gap-6 text-sm text-muted-foreground">
+            {(t.raw('features') as string[]).map((feature, index) => (
+              <span key={index} className="flex items-center gap-1">
+                {index === 0 && '✅'} {index === 1 && '🎯'} {index === 2 && '⚡'} {feature}
+              </span>
+            ))}
           </div>
         </div>
       </div>

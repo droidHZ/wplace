@@ -13,18 +13,6 @@ type Href = Parameters<typeof getLocalePathname>[0]['href'];
  */
 const staticRoutes = [
   '/',
-  '/pricing',
-  '/blog',
-  '/docs',
-  '/about',
-  '/contact',
-  '/waitlist',
-  '/changelog',
-  '/privacy',
-  '/terms',
-  '/cookie',
-  '/auth/login',
-  '/auth/register',
 ];
 
 /**
@@ -48,42 +36,43 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
+  // Temporarily commented out other routes
   // add categories
-  sitemapList.push(
-    ...allCategories.flatMap((category: { slug: string }) =>
-      routing.locales.map((locale) => ({
-        url: getUrl(`/blog/category/${category.slug}`, locale),
-        lastModified: new Date(),
-        priority: 0.8,
-        changeFrequency: 'weekly' as const,
-      }))
-    )
-  );
+  // sitemapList.push(
+  //   ...allCategories.flatMap((category: { slug: string }) =>
+  //     routing.locales.map((locale) => ({
+  //       url: getUrl(`/blog/category/${category.slug}`, locale),
+  //       lastModified: new Date(),
+  //       priority: 0.8,
+  //       changeFrequency: 'weekly' as const,
+  //     }))
+  //   )
+  // );
 
   // add posts
-  sitemapList.push(
-    ...allPosts.flatMap((post: { slugAsParams: string }) =>
-      routing.locales.map((locale) => ({
-        url: getUrl(`/blog/${post.slugAsParams}`, locale),
-        lastModified: new Date(),
-        priority: 0.8,
-        changeFrequency: 'weekly' as const,
-      }))
-    )
-  );
+  // sitemapList.push(
+  //   ...allPosts.flatMap((post: { slugAsParams: string }) =>
+  //     routing.locales.map((locale) => ({
+  //       url: getUrl(`/blog/${post.slugAsParams}`, locale),
+  //       lastModified: new Date(),
+  //       priority: 0.8,
+  //       changeFrequency: 'weekly' as const,
+  //     }))
+  //   )
+  // );
 
   // add docs
-  const docsParams = source.generateParams();
-  sitemapList.push(
-    ...docsParams.flatMap((param) =>
-      routing.locales.map((locale) => ({
-        url: getUrl(`/docs/${param.slug.join('/')}`, locale),
-        lastModified: new Date(),
-        priority: 0.8,
-        changeFrequency: 'weekly' as const,
-      }))
-    )
-  );
+  // const docsParams = source.generateParams();
+  // sitemapList.push(
+  //   ...docsParams.flatMap((param) =>
+  //     routing.locales.map((locale) => ({
+  //       url: getUrl(`/docs/${param.slug.join('/')}`, locale),
+  //       lastModified: new Date(),
+  //       priority: 0.8,
+  //       changeFrequency: 'weekly' as const,
+  //     }))
+  //   )
+  // );
 
   return sitemapList;
 }

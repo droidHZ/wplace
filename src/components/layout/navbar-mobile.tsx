@@ -88,15 +88,8 @@ export function NavbarMobile({
           <span className="text-xl font-semibold">{t('Metadata.name')}</span>
         </LocaleLink>
 
-        {/* navbar right shows menu icon and user button */}
+        {/* navbar right shows menu icon */}
         <div className="flex items-center justify-end gap-4">
-          {/* show user button if user is logged in */}
-          {isPending ? (
-            <Skeleton className="size-8 border rounded-full" />
-          ) : currentUser ? (
-            <UserButtonMobile user={currentUser} />
-          ) : null}
-
           <Button
             variant="ghost"
             size="icon"
@@ -121,13 +114,7 @@ export function NavbarMobile({
           {/* if we don't add RemoveScroll component, the underlying 
             page will scroll when we scroll the mobile menu */}
           <RemoveScroll allowPinchZoom enabled>
-            {/* Only render MainMobileMenu when not in loading state */}
-            {!isPending && (
-              <MainMobileMenu
-                userLoggedIn={!!currentUser}
-                onLinkClicked={handleToggleMobileMenu}
-              />
-            )}
+            <MainMobileMenu onLinkClicked={handleToggleMobileMenu} />
           </RemoveScroll>
         </Portal>
       )}
@@ -136,11 +123,10 @@ export function NavbarMobile({
 }
 
 interface MainMobileMenuProps {
-  userLoggedIn: boolean;
   onLinkClicked: () => void;
 }
 
-function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
+function MainMobileMenu({ onLinkClicked }: MainMobileMenuProps) {
   const [expanded, setExpanded] = React.useState<Record<string, boolean>>({});
   const t = useTranslations();
   const menuLinks = getNavbarLinks();
@@ -153,26 +139,19 @@ function MainMobileMenu({ userLoggedIn, onLinkClicked }: MainMobileMenuProps) {
     >
       <div className="size-full flex flex-col items-start space-y-4">
         {/* action buttons */}
-        {userLoggedIn ? null : (
-          <div className="w-full flex flex-col gap-4 px-4">
-            <Button
-              size="lg"
-              className="w-full cursor-pointer"
-              variant="default"
-              onClick={() => {
-                authClient.signIn.social({
-                  provider: 'google',
-                  callbackURL: '/',
-                  errorCallbackURL: '/auth/error',
-                });
-                onLinkClicked();
-              }}
-            >
-              <GoogleIcon className="size-4 mr-2" />
-              {t('Common.login')}
-            </Button>
-          </div>
-        )}
+        <div className="w-full flex flex-col gap-4 px-4">
+          <Button
+            size="lg"
+            className="w-full cursor-pointer"
+            variant="default"
+            onClick={() => {
+              window.open('https://wplace.live', '_blank');
+              onLinkClicked();
+            }}
+          >
+            Start Painting
+          </Button>
+        </div>
 
         {/* main menu */}
         <ul className="w-full px-4">

@@ -139,9 +139,9 @@ const COLOR_THEMES = {
 
 export default function HeroSection() {
   const t = useTranslations('HomePage.hero');
-  const linkIntroduction = 'https://x.com/mksaascom';
-  const linkPrimary = '/#pricing';
-  const linkSecondary = 'https://demo.mksaas.com';
+  const linkIntroduction = 'https://wplace.live';
+  const linkPrimary = '/start-converting';
+  const linkSecondary = 'https://wplace.live';
 
   // Pixel generator state
   const [pixelSize, setPixelSize] = useState([12]);
@@ -637,30 +637,6 @@ export default function HeroSection() {
                   {t('description')}
                 </p>
 
-                {/* action buttons */}
-                <div className="mt-12 flex flex-row items-center justify-center gap-4">
-                  <div className="bg-foreground/10 rounded-[calc(var(--radius-xl)+0.125rem)] border p-0.5">
-                    <Button
-                      asChild
-                      size="lg"
-                      className="rounded-xl px-5 text-base"
-                    >
-                      <LocaleLink href={linkPrimary}>
-                        <span className="text-nowrap">{t('primary')}</span>
-                      </LocaleLink>
-                    </Button>
-                  </div>
-                  <Button
-                    asChild
-                    size="lg"
-                    variant="outline"
-                    className="h-10.5 rounded-xl px-5"
-                  >
-                    <LocaleLink href={linkSecondary}>
-                      <span className="text-nowrap">{t('secondary')}</span>
-                    </LocaleLink>
-                  </Button>
-                </div>
               </div>
             </div>
 
@@ -673,21 +649,30 @@ export default function HeroSection() {
                     <div className="space-y-6">
                       {/* Upload Area */}
                       <Card>
+                        <CardHeader>
+                          <CardTitle className="text-xl font-semibold">{t('pixelGenerator.upload.title')}</CardTitle>
+                          <CardDescription>{t('pixelGenerator.upload.description')}</CardDescription>
+                        </CardHeader>
                         <CardContent>
                           <div
-                            className="border-2 border-dashed border-gray-300 rounded-lg p-12 text-center cursor-pointer hover:border-blue-400 transition-colors"
+                            className="border-2 border-dashed border-blue-300 rounded-lg p-8 text-center cursor-pointer hover:border-blue-500 hover:bg-blue-50/50 transition-all duration-300 group"
                             onDrop={handleDrop}
                             onDragOver={handleDragOver}
                             onDragEnter={handleDragOver}
                             onClick={() => fileInputRef.current?.click()}
                           >
-                            <Upload className="w-12 h-12 text-blue-500 mx-auto mb-4" />
+                            <Upload className="w-16 h-16 text-blue-500 mx-auto mb-4 group-hover:scale-110 transition-transform duration-300" />
                             <h3 className="text-lg font-medium text-gray-900 mb-2">
                               {t('pixelGenerator.upload.description')}
                             </h3>
-                            <p className="text-sm text-gray-500">
+                            <p className="text-sm text-gray-500 mb-4">
                               {t('pixelGenerator.upload.supportedFormats')}
                             </p>
+                            <div className="flex justify-center space-x-4 text-xs text-gray-400">
+                              <span>✓ {t('pixelGenerator.palette.officialPalette')}</span>
+                              <span>✓ {t('pixelGenerator.palette.selectFree')}</span>
+                              <span>✓ Instant conversion</span>
+                            </div>
                             <input
                               ref={fileInputRef}
                               type="file"
@@ -704,14 +689,19 @@ export default function HeroSection() {
 
                       {/* Pixel Size Control */}
                       <Card>
+                        <CardHeader>
+                          <CardTitle className="text-lg font-semibold">{t('pixelGenerator.pixelSize.label', { size: '' }).split(':')[0]}</CardTitle>
+                          <CardDescription>{t('pixelGenerator.pixelSize.description')}</CardDescription>
+                        </CardHeader>
                         <CardContent>
                           <div className="space-y-4">
                             <div className="flex items-center justify-between">
                               <Label className="text-sm font-medium">
-                                {t('pixelGenerator.pixelSize.label', {
-                                  size: pixelSize[0],
-                                })}
+                                {t('pixelGenerator.pixelSize.label', { size: pixelSize[0] })}
                               </Label>
+                              <div className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded">
+                                {pixelSize[0] <= 8 ? 'High Detail' : pixelSize[0] <= 16 ? 'Balanced' : 'Fast & Simple'}
+                              </div>
                             </div>
                             <Slider
                               value={pixelSize}
@@ -721,8 +711,13 @@ export default function HeroSection() {
                               step={1}
                               className="w-full"
                             />
+                            <div className="flex justify-between text-xs text-gray-500">
+                              <span>1px (Ultra HD)</span>
+                              <span>25px (Medium)</span>
+                              <span>50px (Low Detail)</span>
+                            </div>
                             <p className="text-xs text-gray-500">
-                              {t('pixelGenerator.pixelSize.description')}
+                              Smaller pixels = higher detail but more time to place on Wplace.live (30s per pixel)
                             </p>
                           </div>
                         </CardContent>
@@ -731,19 +726,36 @@ export default function HeroSection() {
 
                       {/* Color Palette */}
                       <Card>
+                        <CardHeader>
+                          <CardTitle className="text-lg font-semibold">{t('pixelGenerator.palette.title')}</CardTitle>
+                          <CardDescription>{t('pixelGenerator.palette.officialPalette')}</CardDescription>
+                        </CardHeader>
                         <CardContent>
                           <div className="space-y-4">
-                            <div className="flex items-center justify-between">
-                              <h3 className="text-lg font-medium">
-                                {t('pixelGenerator.palette.title')}
-                              </h3>
-                            </div>
 
+
+                            {/* Quick Stats */}
+                            <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-3 rounded-lg border border-blue-200">
+                              <div className="grid grid-cols-3 gap-4 text-center text-xs">
+                                <div>
+                                  <div className="text-blue-600 font-semibold">{WPLACE_COLORS.filter(c => !c.locked).length}</div>
+                                  <div className="text-gray-600">Free Colors</div>
+                                </div>
+                                <div>
+                                  <div className="text-purple-600 font-semibold">{WPLACE_COLORS.filter(c => c.locked).length}</div>
+                                  <div className="text-gray-600">Premium Colors</div>
+                                </div>
+                                <div>
+                                  <div className="text-green-600 font-semibold">{WPLACE_COLORS.length - 1}</div>
+                                  <div className="text-gray-600">Total Colors</div>
+                                </div>
+                              </div>
+                            </div>
 
                             {/* Theme Buttons */}
                             <div className="space-y-3">
                               <div className="text-sm font-medium text-gray-700">
-                                Color Themes
+                                Quick Color Themes
                               </div>
                               <div className="grid grid-cols-5 gap-2">
                                 {Object.entries(COLOR_THEMES).map(([key, theme]) => (
@@ -751,7 +763,7 @@ export default function HeroSection() {
                                     key={key}
                                     variant="outline"
                                     size="sm"
-                                    className="flex flex-col items-center p-2 h-auto"
+                                    className="flex flex-col items-center p-2 h-auto hover:scale-105 transition-transform"
                                     onClick={() => applyTheme(key as keyof typeof COLOR_THEMES)}
                                   >
                                     <div className="flex space-x-1 mb-1">
@@ -776,30 +788,34 @@ export default function HeroSection() {
                                   size="sm"
                                   onClick={selectAllColors}
                                 >
-                                  Select All
+                                  {t('pixelGenerator.palette.selectAll')}
                                 </Button>
                                 <Button
                                   variant="outline"
                                   size="sm"
                                   onClick={selectFreeColors}
                                 >
-                                  Select Free
+                                  {t('pixelGenerator.palette.selectFree')}
                                 </Button>
                                 <Button
                                   variant="outline"
                                   size="sm"
                                   onClick={clearAllColors}
                                 >
-                                  Clear All
+                                  {t('pixelGenerator.palette.clear')}
                                 </Button>
                               </div>
                               <span className="text-sm text-gray-500">
-                                Selected: {selectedColors.size} / {WPLACE_COLORS.length}
+                                {t('pixelGenerator.palette.selectedCount', { count: selectedColors.size, total: WPLACE_COLORS.length })}
                               </span>
                             </div>
 
-                            <div className="text-xs text-gray-500 mb-2">
-                              {t('pixelGenerator.palette.clickToSelect')}
+                            <div className="text-xs text-gray-500 mb-2 flex items-center justify-between">
+                              <span>{t('pixelGenerator.palette.clickToSelect')}</span>
+                              <span className="flex items-center gap-1">
+                                <Lock className="w-3 h-3" />
+                                = Premium Color
+                              </span>
                             </div>
 
                             <div className="grid grid-cols-16 gap-0.5">
@@ -824,9 +840,11 @@ export default function HeroSection() {
                               ))}
                             </div>
 
-                            <p className="text-xs text-center text-gray-500">
-                              {t('pixelGenerator.palette.officialPalette')}
-                            </p>
+                            <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
+                              <p className="text-xs text-center text-yellow-800">
+                                🎨 Official Wplace.live palette • Premium colors require paid placement • Free colors available 24/7
+                              </p>
+                            </div>
                           </div>
                         </CardContent>
                       </Card>
@@ -837,10 +855,10 @@ export default function HeroSection() {
                       <Card>
                         <CardHeader>
                           <div className="flex items-center justify-between mb-2">
-                            <CardTitle>
+                            <CardTitle className="text-xl font-semibold">
                               {t('pixelGenerator.result.title')}
                             </CardTitle>
-                            <Button variant="ghost" size="sm">
+                            <Button variant="ghost" size="sm" className="text-blue-600 hover:text-blue-800">
                               <Share2 className="w-4 h-4" />
                             </Button>
                           </div>
@@ -851,21 +869,22 @@ export default function HeroSection() {
                         <CardContent>
                           {processedImage ? (
                             <div className="space-y-4">
-                              <div className="bg-gray-100 p-3 rounded-lg">
-                                <div className="grid grid-cols-5 gap-4 text-sm">
+                              {/* Enhanced Stats Panel */}
+                              <div className="bg-gradient-to-r from-gray-50 to-blue-50 p-4 rounded-lg border border-blue-200">
+                                <div className="grid grid-cols-2 lg:grid-cols-5 gap-4 text-sm">
                                   <div className="text-center">
-                                    <span className="text-gray-600">
+                                    <span className="text-gray-600 text-xs">
                                       {t('pixelGenerator.result.stats.total')}
                                     </span>
-                                    <div className="text-green-600 font-medium">
+                                    <div className="text-green-600 font-bold text-lg">
                                       {imageStats.total.toLocaleString()}
                                     </div>
                                   </div>
                                   <div className="text-center">
-                                    <span className="text-gray-600">
-                                      Time Required
+                                    <span className="text-gray-600 text-xs">
+                                      ⏱️ Time to Complete
                                     </span>
-                                    <div className="text-blue-600 font-medium">
+                                    <div className="text-blue-600 font-bold text-lg">
                                       {(() => {
                                         const totalSeconds = imageStats.total * 30;
                                         const hours = Math.floor(totalSeconds / 3600);
@@ -875,7 +894,7 @@ export default function HeroSection() {
                                         if (hours > 0) {
                                           return `${hours}h ${minutes}m`;
                                         } else if (minutes > 0) {
-                                          return `${minutes}m ${seconds}s`;
+                                          return `${minutes}m`;
                                         } else {
                                           return `${seconds}s`;
                                         }
@@ -883,18 +902,18 @@ export default function HeroSection() {
                                     </div>
                                   </div>
                                   <div className="text-center">
-                                    <span className="text-gray-600">
-                                      Colors Used
+                                    <span className="text-gray-600 text-xs">
+                                      🎨 Colors Used
                                     </span>
-                                    <div className="text-purple-600 font-medium">
+                                    <div className="text-purple-600 font-bold text-lg">
                                       {usedColors.length}
                                     </div>
                                   </div>
                                   <div className="text-center">
-                                    <span className="text-gray-600">
-                                      Free Pixels
+                                    <span className="text-gray-600 text-xs">
+                                      ✅ Free Pixels
                                     </span>
-                                    <div className="text-green-600 font-medium">
+                                    <div className="text-green-600 font-bold text-lg">
                                       {(() => {
                                         let freePixels = 0;
                                         usedColors.forEach(c => {
@@ -908,10 +927,10 @@ export default function HeroSection() {
                                     </div>
                                   </div>
                                   <div className="text-center">
-                                    <span className="text-gray-600">
-                                      Premium Pixels
+                                    <span className="text-gray-600 text-xs">
+                                      💎 Premium Pixels
                                     </span>
-                                    <div className="text-orange-600 font-medium">
+                                    <div className="text-orange-600 font-bold text-lg">
                                       {(() => {
                                         let premiumPixels = 0;
                                         usedColors.forEach(c => {
@@ -923,6 +942,13 @@ export default function HeroSection() {
                                         return premiumPixels.toLocaleString();
                                       })()}
                                     </div>
+                                  </div>
+                                </div>
+                                <div className="mt-3 text-center">
+                                  <div className="inline-flex items-center gap-2 text-xs text-gray-600 bg-white px-3 py-1 rounded-full border">
+                                    <span>🌍 Ready for Wplace.live</span>
+                                    <span>•</span>
+                                    <span>30s cooldown per pixel</span>
                                   </div>
                                 </div>
                               </div>
@@ -1185,29 +1211,62 @@ export default function HeroSection() {
                                   </div>
                                 </div>
 
-                                {/* Download Buttons */}
-                                <div className="flex space-x-2">
-                                  <Button
-                                    variant="outline"
-                                    onClick={downloadWithGrid}
-                                  >
-                                    {t('pixelGenerator.result.downloadWithGrid')}
-                                  </Button>
-                                  <Button onClick={downloadImage}>
-                                    {t('pixelGenerator.result.download')}
-                                  </Button>
+                                {/* Enhanced Download Section */}
+                                <div className="space-y-3">
+                                  <div className="text-sm font-medium text-gray-700 text-center">
+                                    Export for Wplace.live
+                                  </div>
+                                  <div className="grid grid-cols-2 gap-3">
+                                    <Button
+                                      variant="outline"
+                                      onClick={downloadWithGrid}
+                                      className="flex flex-col items-center p-4 h-auto"
+                                    >
+                                      <div className="text-sm font-medium">With Grid</div>
+                                      <div className="text-xs text-gray-500">Planning template</div>
+                                    </Button>
+                                    <Button 
+                                      onClick={downloadImage}
+                                      className="flex flex-col items-center p-4 h-auto bg-blue-600 hover:bg-blue-700"
+                                    >
+                                      <div className="text-sm font-medium">Clean Art</div>
+                                      <div className="text-xs text-blue-100">Final result</div>
+                                    </Button>
+                                  </div>
+                                  <div className="text-center">
+                                    <Button 
+                                      variant="outline" 
+                                      className="w-full text-blue-600 border-blue-200 hover:bg-blue-50"
+                                      onClick={() => window.open('https://wplace.live', '_blank')}
+                                    >
+                                      🌍 Open Wplace.live to Start Placing
+                                    </Button>
+                                  </div>
                                 </div>
 
-                                <p className="text-xs text-gray-500 text-center">
-                                  {t('pixelGenerator.result.controls.dragInfo')}
-                                </p>
+                                <div className="bg-green-50 border border-green-200 rounded-lg p-3">
+                                  <p className="text-xs text-center text-green-800">
+                                    💡 Pro tip: Use drag to pan around your pixel art • Zoom with controls above • Each pixel takes 30 seconds to place on Wplace.live
+                                  </p>
+                                </div>
                               </div>
                             </div>
                           ) : (
-                            <div className="border-2 border-dashed border-gray-200 rounded-lg p-8 min-h-96 flex items-center justify-center">
-                              <p className="text-gray-400">
-                                {t('pixelGenerator.result.placeholder')}
+                            <div className="border-2 border-dashed border-gray-200 rounded-lg p-8 min-h-96 flex flex-col items-center justify-center bg-gradient-to-br from-gray-50 to-blue-50">
+                              <div className="text-6xl mb-4">🎨</div>
+                              <p className="text-gray-600 text-lg font-medium mb-2">
+                                Your pixel art will appear here
                               </p>
+                              <p className="text-gray-400 text-sm text-center max-w-md">
+                                Upload an image above to convert it into Wplace-ready pixel art. Perfect for collaborative art on the world's largest pixel canvas!
+                              </p>
+                              <div className="mt-4 flex items-center gap-2 text-xs text-gray-500">
+                                <span>✨ Instant conversion</span>
+                                <span>•</span>
+                                <span>🌍 Wplace.live ready</span>
+                                <span>•</span>
+                                <span>🎯 Precise pixel mapping</span>
+                              </div>
                             </div>
                           )}
                         </CardContent>

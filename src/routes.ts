@@ -21,6 +21,12 @@ export enum Routes {
   PrivacyPolicy = '/privacy',
   TermsOfService = '/terms',
 
+  // wplace pixel art pages
+  ImageToPixel = '/image-to-pixel',
+  NamePixel = '/name-pixel',
+  LocationGallery = '/location-gallery',
+  WplaceOverlay = '/wplace-overlay',
+
   // auth routes
   Login = '/auth/login',
   Register = '/auth/register',

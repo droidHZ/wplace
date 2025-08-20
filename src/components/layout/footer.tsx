@@ -3,91 +3,74 @@
 import Container from '@/components/layout/container';
 import { Logo } from '@/components/layout/logo';
 import { ModeSwitcherHorizontal } from '@/components/layout/mode-switcher-horizontal';
-import BuiltWithButton from '@/components/shared/built-with-button';
-import { getFooterLinks } from '@/config/footer-config';
-import { getSocialLinks } from '@/config/social-config';
+import { Routes } from '@/routes';
 import { LocaleLink } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import type React from 'react';
-import { ThemeSelector } from './theme-selector';
 
 export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
   const t = useTranslations();
-  const footerLinks = getFooterLinks();
-  const socialLinks = getSocialLinks();
+
+  const toolLinks = [
+    {
+      title: 'Image to Pixel',
+      href: Routes.ImageToPixel,
+      description: 'Convert your images to pixel art'
+    },
+    {
+      title: 'Name Pixel',
+      href: Routes.NamePixel,
+      description: 'Create pixel art from names'
+    },
+    {
+      title: 'Location Gallery',
+      href: Routes.LocationGallery,
+      description: 'Browse pixel art by location'
+    },
+    {
+      title: 'Wplace Overlay',
+      href: Routes.WplaceOverlay,
+      description: 'View overlay tools for pixel art'
+    }
+  ];
 
   return (
     <footer className={cn('border-t', className)}>
       <Container className="px-4">
-        <div className="grid grid-cols-2 gap-8 py-16 md:grid-cols-6">
-          <div className="flex flex-col items-start col-span-full md:col-span-2">
-            <div className="space-y-4">
-              {/* logo and name */}
-              <div className="items-center space-x-2 flex">
-                <Logo />
-                <span className="text-xl font-semibold">
-                  {t('Metadata.name')}
-                </span>
-              </div>
-
-              {/* tagline */}
-              <p className="text-muted-foreground text-base py-2 md:pr-12">
-                {t('Marketing.footer.tagline')}
-              </p>
-
-              {/* social links */}
-              <div className="flex items-center gap-4 py-2">
-                <div className="flex items-center gap-2">
-                  {socialLinks?.map((link) => (
-                    <a
-                      key={link.title}
-                      href={link.href || '#'}
-                      target="_blank"
-                      rel="noreferrer"
-                      aria-label={link.title}
-                      className="border border-border inline-flex h-8 w-8 items-center 
-                          justify-center rounded-full hover:bg-accent hover:text-accent-foreground"
-                    >
-                      <span className="sr-only">{link.title}</span>
-                      {link.icon ? link.icon : null}
-                    </a>
-                  ))}
-                </div>
-              </div>
-
-              {/* built with button */}
-              <BuiltWithButton />
+        <div className="grid grid-cols-1 gap-8 py-16 md:grid-cols-3">
+          <div className="flex flex-col items-start space-y-4">
+            {/* logo and name */}
+            <div className="items-center space-x-2 flex">
+              <Logo />
+              <span className="text-xl font-semibold">
+                {t('Metadata.name')}
+              </span>
             </div>
+
+            {/* updated tagline for pixel art */}
+            <p className="text-muted-foreground text-base">
+              Your ultimate platform for creating, converting, and exploring pixel art. Transform images, create art from names, and discover amazing pixel creations from around the world.
+            </p>
           </div>
 
-          {/* footer links */}
-          {footerLinks?.map((section) => (
-            <div
-              key={section.title}
-              className="col-span-1 md:col-span-1 items-start"
-            >
-              <span className="text-sm font-semibold uppercase">
-                {section.title}
-              </span>
-              <ul className="mt-4 list-inside space-y-3">
-                {section.items?.map(
-                  (item) =>
-                    item.href && (
-                      <li key={item.title}>
-                        <LocaleLink
-                          href={item.href || '#'}
-                          target={item.external ? '_blank' : undefined}
-                          className="text-sm text-muted-foreground hover:text-primary"
-                        >
-                          {item.title}
-                        </LocaleLink>
-                      </li>
-                    )
-                )}
-              </ul>
+          {/* tool links */}
+          <div className="col-span-1 md:col-span-2">
+            <h3 className="text-lg font-semibold mb-4">Tools & Features</h3>
+            <div className="grid grid-cols-1 gap-4 md:grid-cols-2">
+              {toolLinks.map((tool) => (
+                <div key={tool.title}>
+                  <LocaleLink
+                    href={tool.href}
+                    className="block p-4 rounded-lg border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
+                  >
+                    <h4 className="font-medium mb-1">{tool.title}</h4>
+                    <p className="text-sm text-muted-foreground">{tool.description}</p>
+                  </LocaleLink>
+                </div>
+              ))}
             </div>
-          ))}
+          </div>
         </div>
       </Container>
 

@@ -214,29 +214,18 @@ export function Navbar({ scroll }: NavBarProps) {
             </NavigationMenu>
           </div>
 
-          {/* navbar right show sign in or user */}
+          {/* navbar right show start painting button */}
           <div className="flex items-center gap-x-4">
-            {!mounted || isPending ? (
-              <Skeleton className="size-8 border rounded-full" />
-            ) : currentUser ? (
-              <UserButton user={currentUser} />
-            ) : (
-              <Button
-                size="sm"
-                className="cursor-pointer"
-                variant="default"
-                onClick={() => {
-                  authClient.signIn.social({
-                    provider: 'google',
-                    callbackURL: '/',
-                    errorCallbackURL: '/auth/error',
-                  });
-                }}
-              >
-                <GoogleIcon className="size-4 mr-2" />
-                {t('Common.login')}
-              </Button>
-            )}
+            <Button
+              size="sm"
+              className="cursor-pointer"
+              variant="default"
+              onClick={() => {
+                window.open('https://wplace.live', '_blank');
+              }}
+            >
+              Start Painting
+            </Button>
 
             <ModeSwitcher />
             <LocaleSwitcher />
