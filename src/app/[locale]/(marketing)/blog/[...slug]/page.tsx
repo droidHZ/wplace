@@ -1,6 +1,5 @@
 import AllPostsButton from '@/components/blog/all-posts-button';
 import BlogGrid from '@/components/blog/blog-grid';
-import { console } from '@/lib/logger';
 import { BlogToc } from '@/components/blog/blog-toc';
 import { NewsletterCard } from '@/components/newsletter/newsletter-card';
 import { CustomMDXContent } from '@/components/shared/custom-mdx-content';
@@ -8,6 +7,7 @@ import { websiteConfig } from '@/config/website';
 import { LocaleLink } from '@/i18n/navigation';
 import { getTableOfContents } from '@/lib/blog/toc';
 import { formatDate } from '@/lib/formatter';
+import { console } from '@/lib/logger';
 import { constructMetadata } from '@/lib/metadata';
 import { getUrlWithLocale } from '@/lib/urls/urls';
 import type { NextPageProps } from '@/types/next-page-props';

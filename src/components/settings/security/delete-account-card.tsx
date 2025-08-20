@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { FormError } from '@/components/shared/form-error';
 import {
   AlertDialog,
@@ -21,6 +20,7 @@ import {
 } from '@/components/ui/card';
 import { useLocaleRouter } from '@/i18n/navigation';
 import { authClient } from '@/lib/auth-client';
+import { console } from '@/lib/logger';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useState } from 'react';

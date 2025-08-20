@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto';
-import { console } from '@/lib/logger';
 import db from '@/db';
 import { payment, user } from '@/db/schema';
+import { console } from '@/lib/logger';
 import PointsService from '@/lib/points';
 import { findPlanByPlanId, findPriceInPlan } from '@/lib/price-plan';
 import { desc, eq } from 'drizzle-orm';
@@ -396,8 +396,11 @@ export class CreemProvider implements PaymentProvider {
   }
 
   private async onCreateSubscription(creemSubscription: any): Promise<void> {
-    console.log('Creem webhook: onCreateSubscription called with:', JSON.stringify(creemSubscription, null, 2));
-    
+    console.log(
+      'Creem webhook: onCreateSubscription called with:',
+      JSON.stringify(creemSubscription, null, 2)
+    );
+
     const customerId =
       creemSubscription.customer?.id || creemSubscription.customer_id;
     const priceId = creemSubscription.product?.id || creemSubscription.price_id;
@@ -407,12 +410,18 @@ export class CreemProvider implements PaymentProvider {
     console.log('Extracted data:', { customerId, priceId, userId, planId });
 
     if (!userId) {
-      console.error('Creem webhook: No userId in subscription.active metadata, subscription:', creemSubscription.id);
+      console.error(
+        'Creem webhook: No userId in subscription.active metadata, subscription:',
+        creemSubscription.id
+      );
       return;
     }
 
     if (!planId) {
-      console.error('Creem webhook: No planId in subscription.active metadata, userId:', userId);
+      console.error(
+        'Creem webhook: No planId in subscription.active metadata, userId:',
+        userId
+      );
     }
 
     const createFields = {
@@ -558,7 +567,10 @@ export class CreemProvider implements PaymentProvider {
   }
 
   private async onSubscriptionPaid(creemSubscription: any): Promise<void> {
-    console.log('Creem webhook: subscription.paid', JSON.stringify(creemSubscription, null, 2));
+    console.log(
+      'Creem webhook: subscription.paid',
+      JSON.stringify(creemSubscription, null, 2)
+    );
 
     // Update subscription status to active and update payment dates
     const updateFields = {
@@ -576,11 +588,11 @@ export class CreemProvider implements PaymentProvider {
       .update(payment)
       .set(updateFields)
       .where(eq(payment.subscriptionId, creemSubscription.id))
-      .returning({ 
-        id: payment.id, 
+      .returning({
+        id: payment.id,
         userId: payment.userId,
         createdAt: payment.createdAt,
-        interval: payment.interval 
+        interval: payment.interval,
       });
 
     // Award subscription points
@@ -592,13 +604,17 @@ export class CreemProvider implements PaymentProvider {
         const periodStart = creemSubscription.current_period_start_date
           ? new Date(creemSubscription.current_period_start_date)
           : new Date();
-        
+
         // Check if this is the first payment (subscription creation)
         const paymentCreatedAt = new Date(result[0].createdAt);
-        const timeDifference = Math.abs(periodStart.getTime() - paymentCreatedAt.getTime());
+        const timeDifference = Math.abs(
+          periodStart.getTime() - paymentCreatedAt.getTime()
+        );
         const isFirstPayment = timeDifference < 24 * 60 * 60 * 1000; // Within 24 hours of creation
 
-        console.log(`Attempting to award subscription points: userId=${userId}, planId=${planId}, interval=${interval}, isFirstPayment=${isFirstPayment}`);
+        console.log(
+          `Attempting to award subscription points: userId=${userId}, planId=${planId}, interval=${interval}, isFirstPayment=${isFirstPayment}`
+        );
 
         if (planId && userId) {
           await PointsService.handleSubscriptionPayment(
@@ -612,7 +628,9 @@ export class CreemProvider implements PaymentProvider {
             `✅ Successfully awarded subscription points to user ${userId} for plan ${planId}`
           );
         } else {
-          console.error(`❌ Missing required data for subscription points: userId=${userId}, planId=${planId}`);
+          console.error(
+            `❌ Missing required data for subscription points: userId=${userId}, planId=${planId}`
+          );
         }
       } catch (error) {
         console.error('❌ Error awarding subscription points:', error);

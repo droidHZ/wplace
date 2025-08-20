@@ -13,7 +13,8 @@ export async function generateMetadata({
 
   return constructMetadata({
     title: 'Pixel Art Location Gallery - Explore Creations',
-    description: 'Discover amazing pixel art creations from different locations on Wplace.live. Browse, explore and get inspired by community artwork.',
+    description:
+      'Discover amazing pixel art creations from different locations on Wplace.live. Browse, explore and get inspired by community artwork.',
     canonicalUrl: getUrlWithLocale('/location-gallery', locale),
   });
 }
@@ -22,7 +23,9 @@ interface LocationGalleryPageProps {
   params: Promise<{ locale: Locale }>;
 }
 
-export default async function LocationGalleryPage(props: LocationGalleryPageProps) {
+export default async function LocationGalleryPage(
+  props: LocationGalleryPageProps
+) {
   const params = await props.params;
 
   return (

@@ -1,8 +1,8 @@
 import BlogGrid from '@/components/blog/blog-grid';
 import EmptyGrid from '@/components/shared/empty-grid';
-import { console } from '@/lib/logger';
 import CustomPagination from '@/components/shared/pagination';
 import { websiteConfig } from '@/config/website';
+import { console } from '@/lib/logger';
 import { constructMetadata } from '@/lib/metadata';
 import { getUrlWithLocale } from '@/lib/urls/urls';
 import type { NextPageProps } from '@/types/next-page-props';

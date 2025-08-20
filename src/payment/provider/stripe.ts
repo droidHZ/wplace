@@ -1,7 +1,7 @@
 import { randomUUID } from 'crypto';
-import { console } from '@/lib/logger';
 import db from '@/db';
 import { payment, session, user } from '@/db/schema';
+import { console } from '@/lib/logger';
 import PointsService from '@/lib/points';
 import {
   findPlanByPlanId,
@@ -471,25 +471,33 @@ export class StripeProvider implements PaymentProvider {
       );
 
       // Award points for subscription signup
-      console.log(`🎯 [STRIPE POINTS] Starting subscription points award process for subscription ${stripeSubscription.id}`);
+      console.log(
+        `🎯 [STRIPE POINTS] Starting subscription points award process for subscription ${stripeSubscription.id}`
+      );
       try {
         const planId = stripeSubscription.metadata.planId;
-        console.log(`📊 [STRIPE POINTS] Plan ID from metadata: ${planId}, User ID: ${userId}`);
-        
+        console.log(
+          `📊 [STRIPE POINTS] Plan ID from metadata: ${planId}, User ID: ${userId}`
+        );
+
         if (planId && userId) {
-          console.log(`🔄 [STRIPE POINTS] Calling PointsService.handleSubscriptionSignup for user ${userId}, plan ${planId}`);
-          await PointsService.handleSubscriptionSignup(
-            userId,
-            planId
+          console.log(
+            `🔄 [STRIPE POINTS] Calling PointsService.handleSubscriptionSignup for user ${userId}, plan ${planId}`
           );
+          await PointsService.handleSubscriptionSignup(userId, planId);
           console.log(
             `✅ [STRIPE POINTS] Successfully awarded subscription signup points to user ${userId} for plan ${planId}`
           );
         } else {
-          console.log(`⚠️ [STRIPE POINTS] Missing planId (${planId}) or userId (${userId}) - skipping points award`);
+          console.log(
+            `⚠️ [STRIPE POINTS] Missing planId (${planId}) or userId (${userId}) - skipping points award`
+          );
         }
       } catch (error) {
-        console.error(`❌ [STRIPE POINTS] Error awarding subscription signup points for subscription ${stripeSubscription.id}:`, error);
+        console.error(
+          `❌ [STRIPE POINTS] Error awarding subscription signup points for subscription ${stripeSubscription.id}:`,
+          error
+        );
       }
     } else {
       console.warn(
@@ -566,7 +574,11 @@ export class StripeProvider implements PaymentProvider {
             const periodStart = stripeSubscription.current_period_start
               ? new Date(stripeSubscription.current_period_start * 1000)
               : new Date();
-            await PointsService.handleSubscriptionRenewal(userId, planId, periodStart);
+            await PointsService.handleSubscriptionRenewal(
+              userId,
+              planId,
+              periodStart
+            );
             console.log(
               `Awarded renewal points to user ${userId} for plan ${planId}`
             );
@@ -667,25 +679,33 @@ export class StripeProvider implements PaymentProvider {
     );
 
     // Award points for one-time payment
-    console.log(`🎯 [STRIPE POINTS] Starting one-time payment points award process for session ${session.id}`);
+    console.log(
+      `🎯 [STRIPE POINTS] Starting one-time payment points award process for session ${session.id}`
+    );
     try {
       const planId = session.metadata?.planId;
-      console.log(`📊 [STRIPE POINTS] Plan ID from metadata: ${planId}, User ID: ${userId}`);
-      
+      console.log(
+        `📊 [STRIPE POINTS] Plan ID from metadata: ${planId}, User ID: ${userId}`
+      );
+
       if (planId && userId) {
-        console.log(`🔄 [STRIPE POINTS] Calling PointsService.handleSubscriptionSignup for one-time payment - user ${userId}, plan ${planId}`);
-        await PointsService.handleSubscriptionSignup(
-          userId,
-          planId
+        console.log(
+          `🔄 [STRIPE POINTS] Calling PointsService.handleSubscriptionSignup for one-time payment - user ${userId}, plan ${planId}`
         );
+        await PointsService.handleSubscriptionSignup(userId, planId);
         console.log(
           `✅ [STRIPE POINTS] Successfully awarded one-time payment points to user ${userId} for plan ${planId}`
         );
       } else {
-        console.log(`⚠️ [STRIPE POINTS] Missing planId (${planId}) or userId (${userId}) - skipping one-time payment points award`);
+        console.log(
+          `⚠️ [STRIPE POINTS] Missing planId (${planId}) or userId (${userId}) - skipping one-time payment points award`
+        );
       }
     } catch (error) {
-      console.error(`❌ [STRIPE POINTS] Error awarding one-time payment points for session ${session.id}:`, error);
+      console.error(
+        `❌ [STRIPE POINTS] Error awarding one-time payment points for session ${session.id}:`,
+        error
+      );
     }
   }
 

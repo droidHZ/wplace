@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { CustomerPortalButton } from '@/components/pricing/customer-portal-button';
 import { Badge } from '@/components/ui/badge';
 import { Button } from '@/components/ui/button';
@@ -18,6 +17,7 @@ import { usePayment } from '@/hooks/use-payment';
 import { LocaleLink } from '@/i18n/navigation';
 import { authClient } from '@/lib/auth-client';
 import { formatDate, formatPrice } from '@/lib/formatter';
+import { console } from '@/lib/logger';
 import { cn } from '@/lib/utils';
 import { PlanIntervals } from '@/payment/types';
 import { Routes } from '@/routes';

@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { GoogleIcon } from '@/components/icons/google';
 import Container from '@/components/layout/container';
 import { Logo } from '@/components/layout/logo';
@@ -21,6 +20,7 @@ import { getNavbarLinks } from '@/config/navbar-config';
 import { useScroll } from '@/hooks/use-scroll';
 import { LocaleLink, useLocalePathname } from '@/i18n/navigation';
 import { authClient } from '@/lib/auth-client';
+import { console } from '@/lib/logger';
 import { cn } from '@/lib/utils';
 import { ArrowUpRightIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';

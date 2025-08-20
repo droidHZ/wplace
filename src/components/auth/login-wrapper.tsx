@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { LoginForm } from '@/components/auth/login-form';
 import {
   Dialog,
@@ -10,6 +9,7 @@ import {
   DialogTrigger,
 } from '@/components/ui/dialog';
 import { useLocaleRouter } from '@/i18n/navigation';
+import { console } from '@/lib/logger';
 import { Routes } from '@/routes';
 import { useEffect, useState } from 'react';
 

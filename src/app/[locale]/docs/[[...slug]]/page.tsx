@@ -1,6 +1,5 @@
 import * as Preview from '@/components/docs';
 import { CustomMDXContent } from '@/components/shared/custom-mdx-content';
-import { console } from '@/lib/logger';
 import {
   HoverCard,
   HoverCardContent,
@@ -8,6 +7,7 @@ import {
 } from '@/components/ui/hover-card';
 import { LOCALES } from '@/i18n/routing';
 import { source } from '@/lib/docs/source';
+import { console } from '@/lib/logger';
 import { constructMetadata } from '@/lib/metadata';
 import { getUrlWithLocale } from '@/lib/urls/urls';
 import Link from 'fumadocs-core/link';

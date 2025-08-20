@@ -21,14 +21,13 @@ export async function POST(request: NextRequest) {
     const { amount, description } = body;
 
     if (!amount || amount <= 0) {
-      return NextResponse.json(
-        { error: 'Invalid amount' },
-        { status: 400 }
-      );
+      return NextResponse.json({ error: 'Invalid amount' }, { status: 400 });
     }
 
     // Check if user has enough points
-    const userSummary = await PointsService.getUserPointsSummary(session.user.id);
+    const userSummary = await PointsService.getUserPointsSummary(
+      session.user.id
+    );
     if (userSummary.totalPoints < amount) {
       return NextResponse.json(
         { error: 'Insufficient points' },
@@ -46,7 +45,9 @@ export async function POST(request: NextRequest) {
     });
 
     // Get updated balance
-    const updatedSummary = await PointsService.getUserPointsSummary(session.user.id);
+    const updatedSummary = await PointsService.getUserPointsSummary(
+      session.user.id
+    );
 
     return NextResponse.json({
       success: true,

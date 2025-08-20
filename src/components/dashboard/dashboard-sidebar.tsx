@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { SidebarMain } from '@/components/dashboard/sidebar-main';
 import { SidebarUser } from '@/components/dashboard/sidebar-user';
 import {
@@ -15,6 +14,7 @@ import {
 import { getSidebarLinks } from '@/config/sidebar-config';
 import { LocaleLink } from '@/i18n/navigation';
 import { authClient } from '@/lib/auth-client';
+import { console } from '@/lib/logger';
 import { Routes } from '@/routes';
 import { useTranslations } from 'next-intl';
 import type * as React from 'react';

@@ -123,37 +123,57 @@ export const auth = betterAuth({
     user: {
       create: {
         after: async (user) => {
-          console.log(`🔄 [AUTH HOOK] User created: ${user.id} (${user.email})`);
-          
+          console.log(
+            `🔄 [AUTH HOOK] User created: ${user.id} (${user.email})`
+          );
+
           // Auto subscribe user to newsletter after sign up if enabled in website config
           if (user.email && websiteConfig.newsletter.autoSubscribeAfterSignUp) {
             try {
-              console.log(`📧 [NEWSLETTER] Attempting to subscribe user: ${user.email}`);
+              console.log(
+                `📧 [NEWSLETTER] Attempting to subscribe user: ${user.email}`
+              );
               const subscribed = await subscribe(user.email);
               if (!subscribed) {
                 console.error(
                   `❌ [NEWSLETTER] Failed to subscribe user ${user.email} to newsletter`
                 );
               } else {
-                console.log(`✅ [NEWSLETTER] User ${user.email} subscribed to newsletter`);
+                console.log(
+                  `✅ [NEWSLETTER] User ${user.email} subscribed to newsletter`
+                );
               }
             } catch (error) {
-              console.error('❌ [NEWSLETTER] Newsletter subscription error:', error);
+              console.error(
+                '❌ [NEWSLETTER] Newsletter subscription error:',
+                error
+              );
             }
           } else {
-            console.log(`⏭️ [NEWSLETTER] Newsletter auto-subscribe disabled or no email`);
+            console.log(
+              `⏭️ [NEWSLETTER] Newsletter auto-subscribe disabled or no email`
+            );
           }
 
           // Award signup bonus points
-          console.log(`🎯 [POINTS] Starting signup bonus process for user: ${user.id}`);
+          console.log(
+            `🎯 [POINTS] Starting signup bonus process for user: ${user.id}`
+          );
           try {
             await PointsService.handleSignupBonus(user.id);
-            console.log(`✅ [POINTS] Successfully awarded signup bonus points to user ${user.id}`);
+            console.log(
+              `✅ [POINTS] Successfully awarded signup bonus points to user ${user.id}`
+            );
           } catch (error) {
-            console.error(`❌ [POINTS] Points signup bonus error for user ${user.id}:`, error);
+            console.error(
+              `❌ [POINTS] Points signup bonus error for user ${user.id}:`,
+              error
+            );
           }
-          
-          console.log(`🏁 [AUTH HOOK] Completed processing for user: ${user.id}`);
+
+          console.log(
+            `🏁 [AUTH HOOK] Completed processing for user: ${user.id}`
+          );
         },
       },
     },

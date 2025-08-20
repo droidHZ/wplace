@@ -949,7 +949,12 @@
           "title": "Preview & Refine",
           "description": "Watch your pixel art come to life with real-time preview. Zoom, pan, and hover over pixels to see coordinates and color information.",
           "tip": "🔍 Use the grid overlay to plan precise placement on Wplace.live's massive canvas.",
-          "controls": ["Zoom Controls", "Pan & Drag", "Coordinate Display", "Color Info"]
+          "controls": [
+            "Zoom Controls",
+            "Pan & Drag",
+            "Coordinate Display",
+            "Color Info"
+          ]
         },
         "step4": {
           "number": "04",
@@ -979,7 +984,11 @@
       "description": "Transform your images into stunning pixel art for Wplace.live in seconds. Join thousands of artists creating on the world's largest collaborative canvas.",
       "primaryButton": "🎨 Start Converting Now",
       "secondaryButton": "🌍 Visit Wplace.live",
-      "features": ["Completely Free", "Official 64-Color Palette", "Instant Results"]
+      "features": [
+        "Completely Free",
+        "Official 64-Color Palette",
+        "Instant Results"
+      ]
     },
     "pointsTest": {
       "title": "Points Consumption Test",

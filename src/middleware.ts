@@ -1,7 +1,7 @@
+import { console } from '@/lib/logger';
 import { betterFetch } from '@better-fetch/fetch';
 import createMiddleware from 'next-intl/middleware';
 import { type NextRequest, NextResponse } from 'next/server';
-import { console } from '@/lib/logger';
 import { LOCALES, routing } from './i18n/routing';
 import type { Session } from './lib/auth-types';
 import {

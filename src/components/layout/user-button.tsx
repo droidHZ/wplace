@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { UserAvatar } from '@/components/layout/user-avatar';
 import {
   DropdownMenu,
@@ -12,6 +11,7 @@ import {
 import { getAvatarLinks } from '@/config/avatar-config';
 import { useLocaleRouter } from '@/i18n/navigation';
 import { authClient } from '@/lib/auth-client';
+import { console } from '@/lib/logger';
 import { usePaymentStore } from '@/stores/payment-store';
 import type { User } from 'better-auth';
 import { LogOutIcon } from 'lucide-react';

@@ -1,6 +1,6 @@
-import { console } from '@/lib/logger';
 import BlogCard, { BlogCardSkeleton } from '@/components/blog/blog-card';
 import { websiteConfig } from '@/config/website';
+import { console } from '@/lib/logger';
 import type { Post } from 'content-collections';
 
 interface BlogGridProps {

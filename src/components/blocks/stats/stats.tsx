@@ -19,7 +19,9 @@ export default function StatsSection() {
           <div className="space-y-4">
             <div className="text-5xl font-bold text-primary">4 Trillion</div>
             <p className="text-muted-foreground">Total Pixels on Wplace.live</p>
-            <div className="text-xs text-blue-600">Million times bigger than r/place</div>
+            <div className="text-xs text-blue-600">
+              Million times bigger than r/place
+            </div>
           </div>
           <div className="space-y-4">
             <div className="text-5xl font-bold text-primary">64</div>
@@ -29,7 +31,9 @@ export default function StatsSection() {
           <div className="space-y-4">
             <div className="text-5xl font-bold text-primary">30s</div>
             <p className="text-muted-foreground">Pixel Placement Cooldown</p>
-            <div className="text-xs text-orange-600">Same as original r/place</div>
+            <div className="text-xs text-orange-600">
+              Same as original r/place
+            </div>
           </div>
           <div className="space-y-4">
             <div className="text-5xl font-bold text-primary">1000+</div>

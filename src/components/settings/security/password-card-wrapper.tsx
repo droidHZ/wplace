@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { ResetPasswordCard } from '@/components/settings/security/reset-password-card';
 import { UpdatePasswordCard } from '@/components/settings/security/update-password-card';
 import {
@@ -12,6 +11,7 @@ import {
 } from '@/components/ui/card';
 import { Skeleton } from '@/components/ui/skeleton';
 import { authClient } from '@/lib/auth-client';
+import { console } from '@/lib/logger';
 import { cn } from '@/lib/utils';
 import { useTranslations } from 'next-intl';
 import { useEffect, useState } from 'react';

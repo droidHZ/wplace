@@ -1,5 +1,5 @@
-import { console } from '@/lib/logger';
 import { websiteConfig } from '@/config/website';
+import { console } from '@/lib/logger';
 import { getTemplate } from '@/mail';
 import type {
   MailProvider,

@@ -13,7 +13,8 @@ export async function generateMetadata({
 
   return constructMetadata({
     title: 'Name to Pixel Art Generator - Coming Soon',
-    description: 'Transform names and text into beautiful pixel art. Custom pixel art name generator coming soon to Wplace platform.',
+    description:
+      'Transform names and text into beautiful pixel art. Custom pixel art name generator coming soon to Wplace platform.',
     canonicalUrl: getUrlWithLocale('/name-pixel', locale),
   });
 }

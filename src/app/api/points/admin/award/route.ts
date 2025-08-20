@@ -1,11 +1,11 @@
 import { auth } from '@/lib/auth';
+import { console } from '@/lib/logger';
 import PointsService from '@/lib/points';
 import type {
   PointsReferenceType,
   PointsTransactionReason,
 } from '@/types/points';
 import { type NextRequest, NextResponse } from 'next/server';
-import { console } from '@/lib/logger';
 
 /**
  * POST /api/points/admin/award

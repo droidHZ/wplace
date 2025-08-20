@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { sendMessageAction } from '@/actions/send-message';
 import { FormError } from '@/components/shared/form-error';
 import { Button } from '@/components/ui/button';
@@ -22,6 +21,7 @@ import {
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
 import { Textarea } from '@/components/ui/textarea';
+import { console } from '@/lib/logger';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { useTranslations } from 'next-intl';
 import { useState, useTransition } from 'react';

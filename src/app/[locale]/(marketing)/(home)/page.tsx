@@ -23,13 +23,10 @@ export async function generateMetadata({
   const t = await getTranslations({ locale, namespace: 'Metadata' });
 
   return constructMetadata({
-    title:
-      'Wplace Pixel Art Generator - Convert Images to Pixel Art',
+    title: 'Wplace Pixel Art Generator - Convert Images to Pixel Art',
     description:
       'Free online pixel art converter for Wplace.live. Transform any image into 64-color pixel art instantly. Official palette, drag & drop upload, and export tools.',
     canonicalUrl: getUrlWithLocale('/', locale),
-    keywords:
-      'wplace, pixel art, converter, wplace.live, r/place, collaborative art, image to pixel, online tool, free converter',
   });
 }
 

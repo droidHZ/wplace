@@ -8,12 +8,7 @@ import {
   AccordionItem,
   AccordionTrigger,
 } from '@/components/ui/accordion';
-import {
-  Palette,
-  Upload,
-  Download,
-  Zap,
-} from 'lucide-react';
+import { Download, Palette, Upload, Zap } from 'lucide-react';
 import { AnimatePresence, motion } from 'motion/react';
 import { useTranslations } from 'next-intl';
 import Image from 'next/image';
@@ -70,7 +65,9 @@ export default function FeaturesSection() {
                 Everything You Need for Wplace Art
               </h3>
               <p className="mt-4 text-muted-foreground">
-                From simple drag-and-drop uploads to advanced color palette optimization, our converter provides all the tools you need to create amazing pixel art for Wplace.live.
+                From simple drag-and-drop uploads to advanced color palette
+                optimization, our converter provides all the tools you need to
+                create amazing pixel art for Wplace.live.
               </p>
             </div>
             <Accordion

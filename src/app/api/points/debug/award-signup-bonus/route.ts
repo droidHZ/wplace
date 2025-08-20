@@ -28,16 +28,17 @@ export async function POST(request: NextRequest) {
       );
     }
 
-    console.log(`Manual debug: Awarding signup bonus for user ${session.user.id}, plan ${planId}`);
-
-    // Award subscription signup bonus
-    await PointsService.handleSubscriptionSignup(
-      session.user.id,
-      planId
+    console.log(
+      `Manual debug: Awarding signup bonus for user ${session.user.id}, plan ${planId}`
     );
 
+    // Award subscription signup bonus
+    await PointsService.handleSubscriptionSignup(session.user.id, planId);
+
     // Get updated balance
-    const updatedSummary = await PointsService.getUserPointsSummary(session.user.id);
+    const updatedSummary = await PointsService.getUserPointsSummary(
+      session.user.id
+    );
 
     return NextResponse.json({
       success: true,

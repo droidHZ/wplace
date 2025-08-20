@@ -1,8 +1,8 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { createPortalAction } from '@/actions/create-customer-portal-session';
 import { Button } from '@/components/ui/button';
+import { console } from '@/lib/logger';
 import { cn } from '@/lib/utils';
 import { Loader2Icon } from 'lucide-react';
 import { useTranslations } from 'next-intl';

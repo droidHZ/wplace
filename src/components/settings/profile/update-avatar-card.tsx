@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { FormError } from '@/components/shared/form-error';
 import { Avatar, AvatarFallback, AvatarImage } from '@/components/ui/avatar';
 import { Button } from '@/components/ui/button';
@@ -13,6 +12,7 @@ import {
   CardTitle,
 } from '@/components/ui/card';
 import { authClient } from '@/lib/auth-client';
+import { console } from '@/lib/logger';
 import { cn } from '@/lib/utils';
 import { uploadFileFromBrowser } from '@/storage';
 import { User2Icon } from 'lucide-react';

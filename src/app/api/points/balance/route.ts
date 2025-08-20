@@ -17,7 +17,9 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    const userSummary = await PointsService.getUserPointsSummary(session.user.id);
+    const userSummary = await PointsService.getUserPointsSummary(
+      session.user.id
+    );
 
     return NextResponse.json({
       success: true,

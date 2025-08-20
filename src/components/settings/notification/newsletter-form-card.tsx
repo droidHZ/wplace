@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { checkNewsletterStatusAction } from '@/actions/check-newsletter-status';
 import { subscribeNewsletterAction } from '@/actions/subscribe-newsletter';
 import { unsubscribeNewsletterAction } from '@/actions/unsubscribe-newsletter';
@@ -22,6 +21,7 @@ import {
 } from '@/components/ui/form';
 import { Switch } from '@/components/ui/switch';
 import { authClient } from '@/lib/auth-client';
+import { console } from '@/lib/logger';
 import { cn } from '@/lib/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { Loader2Icon } from 'lucide-react';

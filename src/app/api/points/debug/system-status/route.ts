@@ -18,18 +18,35 @@ export async function GET(request: NextRequest) {
       return NextResponse.json({ error: 'Unauthorized' }, { status: 401 });
     }
 
-    console.log(`🔍 [DEBUG] Checking points system status for debug request from user ${session.user.id}`);
+    console.log(
+      `🔍 [DEBUG] Checking points system status for debug request from user ${session.user.id}`
+    );
 
     // Check all key configuration values
     const configChecks = await Promise.all([
-      PointsService.getConfigValue(PointsConfigKeys.POINTS_SYSTEM_ENABLED, true),
+      PointsService.getConfigValue(
+        PointsConfigKeys.POINTS_SYSTEM_ENABLED,
+        true
+      ),
       PointsService.getConfigValue(PointsConfigKeys.SIGNUP_BONUS, 0),
-      PointsService.getConfigValue(PointsConfigKeys.SUBSCRIPTION_SIGNUP_BONUS, 0),
-      PointsService.getConfigValue(PointsConfigKeys.SUBSCRIPTION_REWARD_RATE, 0),
+      PointsService.getConfigValue(
+        PointsConfigKeys.SUBSCRIPTION_SIGNUP_BONUS,
+        0
+      ),
+      PointsService.getConfigValue(
+        PointsConfigKeys.SUBSCRIPTION_REWARD_RATE,
+        0
+      ),
       PointsService.getConfigValue(PointsConfigKeys.PLAN_BONUSES, {}),
     ]);
 
-    const [systemEnabled, signupBonus, subscriptionBonus, rewardRate, planBonuses] = configChecks;
+    const [
+      systemEnabled,
+      signupBonus,
+      subscriptionBonus,
+      rewardRate,
+      planBonuses,
+    ] = configChecks;
 
     // Get user's current points summary
     let userSummary = null;
@@ -50,7 +67,10 @@ export async function GET(request: NextRequest) {
       userId: session.user.id,
     };
 
-    console.log(`📊 [DEBUG] Points system status:`, JSON.stringify(status, null, 2));
+    console.log(
+      `📊 [DEBUG] Points system status:`,
+      JSON.stringify(status, null, 2)
+    );
 
     return NextResponse.json({
       success: true,

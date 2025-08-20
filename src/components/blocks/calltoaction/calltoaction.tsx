@@ -17,14 +17,27 @@ export default function CallToActionSection() {
           </p>
 
           <div className="mt-12 flex flex-wrap justify-center gap-4">
-            <Button asChild size="lg" className="bg-primary hover:bg-primary/90">
+            <Button
+              asChild
+              size="lg"
+              className="bg-primary hover:bg-primary/90"
+            >
               <LocaleLink href="/#hero">
                 <span>{t('primaryButton')}</span>
               </LocaleLink>
             </Button>
 
-            <Button asChild size="lg" variant="outline" className="border-border text-foreground hover:bg-muted">
-              <a href="https://wplace.live" target="_blank" rel="noopener noreferrer">
+            <Button
+              asChild
+              size="lg"
+              variant="outline"
+              className="border-border text-foreground hover:bg-muted"
+            >
+              <a
+                href="https://wplace.live"
+                target="_blank"
+                rel="noopener noreferrer"
+              >
                 <span>{t('secondaryButton')}</span>
               </a>
             </Button>
@@ -33,7 +46,8 @@ export default function CallToActionSection() {
           <div className="mt-8 flex justify-center items-center gap-6 text-sm text-muted-foreground">
             {(t.raw('features') as string[]).map((feature, index) => (
               <span key={index} className="flex items-center gap-1">
-                {index === 0 && '✅'} {index === 1 && '🎯'} {index === 2 && '⚡'} {feature}
+                {index === 0 && '✅'} {index === 1 && '🎯'}{' '}
+                {index === 2 && '⚡'} {feature}
               </span>
             ))}
           </div>

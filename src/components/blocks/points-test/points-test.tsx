@@ -1,14 +1,20 @@
 'use client';
 
-import React from 'react';
-import { console } from '@/lib/logger';
 import { Button } from '@/components/ui/button';
-import { Card, CardContent, CardDescription, CardHeader, CardTitle } from '@/components/ui/card';
+import {
+  Card,
+  CardContent,
+  CardDescription,
+  CardHeader,
+  CardTitle,
+} from '@/components/ui/card';
 import { Input } from '@/components/ui/input';
 import { Label } from '@/components/ui/label';
 import { useSession } from '@/hooks/use-session';
+import { console } from '@/lib/logger';
 import { CoinsIcon, TrendingDownIcon } from 'lucide-react';
 import { useTranslations } from 'next-intl';
+import React from 'react';
 import { useState } from 'react';
 import { toast } from 'sonner';
 
@@ -22,7 +28,7 @@ export default function PointsTestSection() {
   // Fetch user points on component mount
   const fetchUserPoints = async () => {
     if (!session?.user?.id) return;
-    
+
     try {
       const response = await fetch('/api/points/balance');
       if (response.ok) {
@@ -45,7 +51,7 @@ export default function PointsTestSection() {
       return;
     }
 
-    const pointsToSpend = parseInt(amount);
+    const pointsToSpend = Number.parseInt(amount);
     if (isNaN(pointsToSpend) || pointsToSpend <= 0) {
       toast.error(t('invalidAmount'));
       return;
@@ -85,7 +91,6 @@ export default function PointsTestSection() {
     }
   };
 
-
   return (
     <section className="container mx-auto px-4 py-16">
       <div className="mx-auto max-w-2xl text-center">
@@ -95,9 +100,7 @@ export default function PointsTestSection() {
         <h2 className="text-3xl font-bold tracking-tight sm:text-4xl">
           {t('title')}
         </h2>
-        <p className="mt-4 text-lg text-muted-foreground">
-          {t('description')}
-        </p>
+        <p className="mt-4 text-lg text-muted-foreground">{t('description')}</p>
       </div>
 
       <div className="mx-auto mt-12 max-w-lg">
@@ -107,9 +110,7 @@ export default function PointsTestSection() {
               <CoinsIcon className="h-5 w-5" />
               {t('cardTitle')}
             </CardTitle>
-            <CardDescription>
-              {t('cardDescription')}
-            </CardDescription>
+            <CardDescription>{t('cardDescription')}</CardDescription>
           </CardHeader>
           <CardContent className="space-y-6">
             {/* Current Points Display */}
@@ -136,9 +137,7 @@ export default function PointsTestSection() {
                 min="1"
                 max="10000"
               />
-              <p className="text-xs text-muted-foreground">
-                {t('amountHint')}
-              </p>
+              <p className="text-xs text-muted-foreground">{t('amountHint')}</p>
             </div>
 
             {/* Action Button */}

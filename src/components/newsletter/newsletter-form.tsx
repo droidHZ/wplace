@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import { subscribeNewsletterAction } from '@/actions/subscribe-newsletter';
 import { FormError } from '@/components/shared/form-error';
 import { Button } from '@/components/ui/button';
@@ -13,6 +12,7 @@ import {
   FormMessage,
 } from '@/components/ui/form';
 import { Input } from '@/components/ui/input';
+import { console } from '@/lib/logger';
 import { cn } from '@/lib/utils';
 import { zodResolver } from '@hookform/resolvers/zod';
 import { PaperPlaneIcon } from '@radix-ui/react-icons';

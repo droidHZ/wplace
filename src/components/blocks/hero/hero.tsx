@@ -117,23 +117,88 @@ const WPLACE_COLORS = [
 const COLOR_THEMES = {
   classic: {
     name: 'Classic',
-    colors: ['#000000', '#FFFFFF', '#ED1C24', '#F9DD3B', '#28509E', '#13E67B', '#A50E1E', '#FF7F27', '#4093E4', '#0EB968', '#780C99', '#CB007A'],
+    colors: [
+      '#000000',
+      '#FFFFFF',
+      '#ED1C24',
+      '#F9DD3B',
+      '#28509E',
+      '#13E67B',
+      '#A50E1E',
+      '#FF7F27',
+      '#4093E4',
+      '#0EB968',
+      '#780C99',
+      '#CB007A',
+    ],
   },
   warm: {
     name: 'Warm',
-    colors: ['#600018', '#A50E1E', '#ED1C24', '#E45C1A', '#FF7F27', '#F6AA09', '#F9DD3B', '#95682A', '#D18078', '#FAB6A4', '#DBA463', '#F8B277'],
+    colors: [
+      '#600018',
+      '#A50E1E',
+      '#ED1C24',
+      '#E45C1A',
+      '#FF7F27',
+      '#F6AA09',
+      '#F9DD3B',
+      '#95682A',
+      '#D18078',
+      '#FAB6A4',
+      '#DBA463',
+      '#F8B277',
+    ],
   },
   cool: {
     name: 'Cool',
-    colors: ['#28509E', '#4093E4', '#7DC7FF', '#4D31B8', '#6B50F6', '#99B1FB', '#0F799F', '#60F7F2', '#BBFAF2', '#0C816E', '#10AEA6', '#13E1BE'],
+    colors: [
+      '#28509E',
+      '#4093E4',
+      '#7DC7FF',
+      '#4D31B8',
+      '#6B50F6',
+      '#99B1FB',
+      '#0F799F',
+      '#60F7F2',
+      '#BBFAF2',
+      '#0C816E',
+      '#10AEA6',
+      '#13E1BE',
+    ],
   },
   pastel: {
     name: 'Pastel',
-    colors: ['#FFFABC', '#FAB6A4', '#F38DA9', '#E09FF9', '#99B1FB', '#BBFAF2', '#B5AEF1', '#87FF5E', '#FFC5A5', '#D6B594', '#CDC59E', '#B3B9D1'],
+    colors: [
+      '#FFFABC',
+      '#FAB6A4',
+      '#F38DA9',
+      '#E09FF9',
+      '#99B1FB',
+      '#BBFAF2',
+      '#B5AEF1',
+      '#87FF5E',
+      '#FFC5A5',
+      '#D6B594',
+      '#CDC59E',
+      '#B3B9D1',
+    ],
   },
   monochrome: {
     name: 'Monochrome',
-    colors: ['#000000', '#3C3C3C', '#787878', '#AAAAAA', '#D2D2D2', '#FFFFFF', '#333941', '#6D758D', '#6D643F', '#948C6B', '#7B6352', '#9C846B'],
+    colors: [
+      '#000000',
+      '#3C3C3C',
+      '#787878',
+      '#AAAAAA',
+      '#D2D2D2',
+      '#FFFFFF',
+      '#333941',
+      '#6D758D',
+      '#6D643F',
+      '#948C6B',
+      '#7B6352',
+      '#9C846B',
+    ],
   },
 };
 
@@ -156,8 +221,14 @@ export default function HeroSection() {
   const [showGrid, setShowGrid] = useState(true);
   const [gridColor, setGridColor] = useState('#000000');
   const [zoomLevel, setZoomLevel] = useState([100]);
-  const [usedColors, setUsedColors] = useState<{color: string, count: number, name: string}[]>([]);
-  const [selectedColorInfo, setSelectedColorInfo] = useState<{color: string, count: number, name: string} | null>(null);
+  const [usedColors, setUsedColors] = useState<
+    { color: string; count: number; name: string }[]
+  >([]);
+  const [selectedColorInfo, setSelectedColorInfo] = useState<{
+    color: string;
+    count: number;
+    name: string;
+  } | null>(null);
   const [isDragging, setIsDragging] = useState(false);
   const [dragStart, setDragStart] = useState({ x: 0, y: 0 });
   const [imagePosition, setImagePosition] = useState({ x: 0, y: 0 });
@@ -255,12 +326,12 @@ export default function HeroSection() {
 
           for (let i = 0; i < imageData.data.length; i += 4) {
             const a = imageData.data[i + 3];
-            
+
             // 跳过透明像素，保持其透明状态
             if (a === 0) {
               continue;
             }
-            
+
             const r = imageData.data[i];
             const g = imageData.data[i + 1];
             const b = imageData.data[i + 2];
@@ -280,16 +351,18 @@ export default function HeroSection() {
           ctx.putImageData(imageData, 0, 0);
         } else {
           // 没有选中任何颜色时，使用所有可用的颜色（排除透明色）
-          const allColors = WPLACE_COLORS.filter(c => c.hex !== 'transparent').map((c) => c.hex);
+          const allColors = WPLACE_COLORS.filter(
+            (c) => c.hex !== 'transparent'
+          ).map((c) => c.hex);
 
           for (let i = 0; i < imageData.data.length; i += 4) {
             const a = imageData.data[i + 3];
-            
+
             // 跳过透明像素，保持其透明状态
             if (a === 0) {
               continue;
             }
-            
+
             const r = imageData.data[i];
             const g = imageData.data[i + 1];
             const b = imageData.data[i + 2];
@@ -318,12 +391,12 @@ export default function HeroSection() {
           const g = gridImageData.data[i + 1];
           const b = gridImageData.data[i + 2];
           const a = gridImageData.data[i + 3];
-          
+
           // 跳过透明像素（alpha = 0）
           if (a === 0) {
             continue;
           }
-          
+
           const hex =
             `#${r.toString(16).padStart(2, '0')}${g.toString(16).padStart(2, '0')}${b.toString(16).padStart(2, '0')}`.toUpperCase();
           colorCounts.set(hex, (colorCounts.get(hex) || 0) + 1);
@@ -344,17 +417,21 @@ export default function HeroSection() {
           canvas.width,
           canvas.height
         );
-        
+
         // 转换为带有颜色名称的数组
-        const colorsWithInfo = Array.from(colorCounts.entries()).map(([hex, count]) => {
-          const colorInfo = WPLACE_COLORS.find(c => c.hex.toUpperCase() === hex);
-          return {
-            color: hex,
-            count,
-            name: colorInfo ? colorInfo.name : hex
-          };
-        }).sort((a, b) => b.count - a.count); // 按使用量降序排列
-        
+        const colorsWithInfo = Array.from(colorCounts.entries())
+          .map(([hex, count]) => {
+            const colorInfo = WPLACE_COLORS.find(
+              (c) => c.hex.toUpperCase() === hex
+            );
+            return {
+              color: hex,
+              count,
+              name: colorInfo ? colorInfo.name : hex,
+            };
+          })
+          .sort((a, b) => b.count - a.count); // 按使用量降序排列
+
         setUsedColors(colorsWithInfo);
         setSelectedColorInfo(null); // 重置选中的颜色信息
 
@@ -455,7 +532,7 @@ export default function HeroSection() {
       // 计算在最终大尺寸图像中的像素位置
       const canvasPixelX = Math.floor(mouseX * scaleX);
       const canvasPixelY = Math.floor(mouseY * scaleY);
-      
+
       // 计算在小尺寸网格中的位置（用于显示）
       const gridX = Math.floor(canvasPixelX / pixelSize[0]);
       const gridY = Math.floor(canvasPixelY / pixelSize[0]);
@@ -636,7 +713,6 @@ export default function HeroSection() {
                 <p className="mx-auto mt-8 max-w-2xl text-balance text-lg">
                   {t('description')}
                 </p>
-
               </div>
             </div>
 
@@ -650,8 +726,12 @@ export default function HeroSection() {
                       {/* Upload Area */}
                       <Card>
                         <CardHeader>
-                          <CardTitle className="text-xl font-semibold">{t('pixelGenerator.upload.title')}</CardTitle>
-                          <CardDescription>{t('pixelGenerator.upload.description')}</CardDescription>
+                          <CardTitle className="text-xl font-semibold">
+                            {t('pixelGenerator.upload.title')}
+                          </CardTitle>
+                          <CardDescription>
+                            {t('pixelGenerator.upload.description')}
+                          </CardDescription>
                         </CardHeader>
                         <CardContent>
                           <div
@@ -669,8 +749,12 @@ export default function HeroSection() {
                               {t('pixelGenerator.upload.supportedFormats')}
                             </p>
                             <div className="flex justify-center space-x-4 text-xs text-gray-400">
-                              <span>✓ {t('pixelGenerator.palette.officialPalette')}</span>
-                              <span>✓ {t('pixelGenerator.palette.selectFree')}</span>
+                              <span>
+                                ✓ {t('pixelGenerator.palette.officialPalette')}
+                              </span>
+                              <span>
+                                ✓ {t('pixelGenerator.palette.selectFree')}
+                              </span>
                               <span>✓ Instant conversion</span>
                             </div>
                             <input
@@ -690,17 +774,31 @@ export default function HeroSection() {
                       {/* Pixel Size Control */}
                       <Card>
                         <CardHeader>
-                          <CardTitle className="text-lg font-semibold">{t('pixelGenerator.pixelSize.label', { size: '' }).split(':')[0]}</CardTitle>
-                          <CardDescription>{t('pixelGenerator.pixelSize.description')}</CardDescription>
+                          <CardTitle className="text-lg font-semibold">
+                            {
+                              t('pixelGenerator.pixelSize.label', {
+                                size: '',
+                              }).split(':')[0]
+                            }
+                          </CardTitle>
+                          <CardDescription>
+                            {t('pixelGenerator.pixelSize.description')}
+                          </CardDescription>
                         </CardHeader>
                         <CardContent>
                           <div className="space-y-4">
                             <div className="flex items-center justify-between">
                               <Label className="text-sm font-medium">
-                                {t('pixelGenerator.pixelSize.label', { size: pixelSize[0] })}
+                                {t('pixelGenerator.pixelSize.label', {
+                                  size: pixelSize[0],
+                                })}
                               </Label>
                               <div className="text-xs text-blue-600 bg-blue-50 px-2 py-1 rounded">
-                                {pixelSize[0] <= 8 ? 'High Detail' : pixelSize[0] <= 16 ? 'Balanced' : 'Fast & Simple'}
+                                {pixelSize[0] <= 8
+                                  ? 'High Detail'
+                                  : pixelSize[0] <= 16
+                                    ? 'Balanced'
+                                    : 'Fast & Simple'}
                               </div>
                             </div>
                             <Slider
@@ -717,37 +815,57 @@ export default function HeroSection() {
                               <span>50px (Low Detail)</span>
                             </div>
                             <p className="text-xs text-gray-500">
-                              Smaller pixels = higher detail but more time to place on Wplace.live (30s per pixel)
+                              Smaller pixels = higher detail but more time to
+                              place on Wplace.live (30s per pixel)
                             </p>
                           </div>
                         </CardContent>
                       </Card>
 
-
                       {/* Color Palette */}
                       <Card>
                         <CardHeader>
-                          <CardTitle className="text-lg font-semibold">{t('pixelGenerator.palette.title')}</CardTitle>
-                          <CardDescription>{t('pixelGenerator.palette.officialPalette')}</CardDescription>
+                          <CardTitle className="text-lg font-semibold">
+                            {t('pixelGenerator.palette.title')}
+                          </CardTitle>
+                          <CardDescription>
+                            {t('pixelGenerator.palette.officialPalette')}
+                          </CardDescription>
                         </CardHeader>
                         <CardContent>
                           <div className="space-y-4">
-
-
                             {/* Quick Stats */}
                             <div className="bg-gradient-to-r from-blue-50 to-purple-50 p-3 rounded-lg border border-blue-200">
                               <div className="grid grid-cols-3 gap-4 text-center text-xs">
                                 <div>
-                                  <div className="text-blue-600 font-semibold">{WPLACE_COLORS.filter(c => !c.locked).length}</div>
-                                  <div className="text-gray-600">Free Colors</div>
+                                  <div className="text-blue-600 font-semibold">
+                                    {
+                                      WPLACE_COLORS.filter((c) => !c.locked)
+                                        .length
+                                    }
+                                  </div>
+                                  <div className="text-gray-600">
+                                    Free Colors
+                                  </div>
                                 </div>
                                 <div>
-                                  <div className="text-purple-600 font-semibold">{WPLACE_COLORS.filter(c => c.locked).length}</div>
-                                  <div className="text-gray-600">Premium Colors</div>
+                                  <div className="text-purple-600 font-semibold">
+                                    {
+                                      WPLACE_COLORS.filter((c) => c.locked)
+                                        .length
+                                    }
+                                  </div>
+                                  <div className="text-gray-600">
+                                    Premium Colors
+                                  </div>
                                 </div>
                                 <div>
-                                  <div className="text-green-600 font-semibold">{WPLACE_COLORS.length - 1}</div>
-                                  <div className="text-gray-600">Total Colors</div>
+                                  <div className="text-green-600 font-semibold">
+                                    {WPLACE_COLORS.length - 1}
+                                  </div>
+                                  <div className="text-gray-600">
+                                    Total Colors
+                                  </div>
                                 </div>
                               </div>
                             </div>
@@ -758,26 +876,36 @@ export default function HeroSection() {
                                 Quick Color Themes
                               </div>
                               <div className="grid grid-cols-5 gap-2">
-                                {Object.entries(COLOR_THEMES).map(([key, theme]) => (
-                                  <Button
-                                    key={key}
-                                    variant="outline"
-                                    size="sm"
-                                    className="flex flex-col items-center p-2 h-auto hover:scale-105 transition-transform"
-                                    onClick={() => applyTheme(key as keyof typeof COLOR_THEMES)}
-                                  >
-                                    <div className="flex space-x-1 mb-1">
-                                      {theme.colors.slice(0, 3).map((color, index) => (
-                                        <div
-                                          key={index}
-                                          className="w-3 h-3 rounded-full border border-gray-300"
-                                          style={{ backgroundColor: color }}
-                                        />
-                                      ))}
-                                    </div>
-                                    <span className="text-xs">{theme.name}</span>
-                                  </Button>
-                                ))}
+                                {Object.entries(COLOR_THEMES).map(
+                                  ([key, theme]) => (
+                                    <Button
+                                      key={key}
+                                      variant="outline"
+                                      size="sm"
+                                      className="flex flex-col items-center p-2 h-auto hover:scale-105 transition-transform"
+                                      onClick={() =>
+                                        applyTheme(
+                                          key as keyof typeof COLOR_THEMES
+                                        )
+                                      }
+                                    >
+                                      <div className="flex space-x-1 mb-1">
+                                        {theme.colors
+                                          .slice(0, 3)
+                                          .map((color, index) => (
+                                            <div
+                                              key={index}
+                                              className="w-3 h-3 rounded-full border border-gray-300"
+                                              style={{ backgroundColor: color }}
+                                            />
+                                          ))}
+                                      </div>
+                                      <span className="text-xs">
+                                        {theme.name}
+                                      </span>
+                                    </Button>
+                                  )
+                                )}
                               </div>
                             </div>
 
@@ -806,15 +934,19 @@ export default function HeroSection() {
                                 </Button>
                               </div>
                               <span className="text-sm text-gray-500">
-                                {t('pixelGenerator.palette.selectedCount', { count: selectedColors.size, total: WPLACE_COLORS.length })}
+                                {t('pixelGenerator.palette.selectedCount', {
+                                  count: selectedColors.size,
+                                  total: WPLACE_COLORS.length,
+                                })}
                               </span>
                             </div>
 
                             <div className="text-xs text-gray-500 mb-2 flex items-center justify-between">
-                              <span>{t('pixelGenerator.palette.clickToSelect')}</span>
+                              <span>
+                                {t('pixelGenerator.palette.clickToSelect')}
+                              </span>
                               <span className="flex items-center gap-1">
-                                <Lock className="w-3 h-3" />
-                                = Premium Color
+                                <Lock className="w-3 h-3" />= Premium Color
                               </span>
                             </div>
 
@@ -833,7 +965,10 @@ export default function HeroSection() {
                                   />
                                   {color.locked && (
                                     <div className="absolute bottom-0 right-0 w-3 h-3 bg-gray-900 rounded-tl-md rounded-br-md flex items-center justify-center">
-                                      <Lock className="w-2 h-2 text-white" strokeWidth={3} />
+                                      <Lock
+                                        className="w-2 h-2 text-white"
+                                        strokeWidth={3}
+                                      />
                                     </div>
                                   )}
                                 </div>
@@ -842,7 +977,9 @@ export default function HeroSection() {
 
                             <div className="bg-yellow-50 border border-yellow-200 rounded-lg p-3">
                               <p className="text-xs text-center text-yellow-800">
-                                🎨 Official Wplace.live palette • Premium colors require paid placement • Free colors available 24/7
+                                🎨 Official Wplace.live palette • Premium colors
+                                require paid placement • Free colors available
+                                24/7
                               </p>
                             </div>
                           </div>
@@ -858,7 +995,11 @@ export default function HeroSection() {
                             <CardTitle className="text-xl font-semibold">
                               {t('pixelGenerator.result.title')}
                             </CardTitle>
-                            <Button variant="ghost" size="sm" className="text-blue-600 hover:text-blue-800">
+                            <Button
+                              variant="ghost"
+                              size="sm"
+                              className="text-blue-600 hover:text-blue-800"
+                            >
                               <Share2 className="w-4 h-4" />
                             </Button>
                           </div>
@@ -886,11 +1027,16 @@ export default function HeroSection() {
                                     </span>
                                     <div className="text-blue-600 font-bold text-lg">
                                       {(() => {
-                                        const totalSeconds = imageStats.total * 30;
-                                        const hours = Math.floor(totalSeconds / 3600);
-                                        const minutes = Math.floor((totalSeconds % 3600) / 60);
+                                        const totalSeconds =
+                                          imageStats.total * 30;
+                                        const hours = Math.floor(
+                                          totalSeconds / 3600
+                                        );
+                                        const minutes = Math.floor(
+                                          (totalSeconds % 3600) / 60
+                                        );
                                         const seconds = totalSeconds % 60;
-                                        
+
                                         if (hours > 0) {
                                           return `${hours}h ${minutes}m`;
                                         } else if (minutes > 0) {
@@ -916,8 +1062,12 @@ export default function HeroSection() {
                                     <div className="text-green-600 font-bold text-lg">
                                       {(() => {
                                         let freePixels = 0;
-                                        usedColors.forEach(c => {
-                                          const colorInfo = WPLACE_COLORS.find(pc => pc.hex.toUpperCase() === c.color.toUpperCase());
+                                        usedColors.forEach((c) => {
+                                          const colorInfo = WPLACE_COLORS.find(
+                                            (pc) =>
+                                              pc.hex.toUpperCase() ===
+                                              c.color.toUpperCase()
+                                          );
                                           if (colorInfo && !colorInfo.locked) {
                                             freePixels += c.count;
                                           }
@@ -933,8 +1083,12 @@ export default function HeroSection() {
                                     <div className="text-orange-600 font-bold text-lg">
                                       {(() => {
                                         let premiumPixels = 0;
-                                        usedColors.forEach(c => {
-                                          const colorInfo = WPLACE_COLORS.find(pc => pc.hex.toUpperCase() === c.color.toUpperCase());
+                                        usedColors.forEach((c) => {
+                                          const colorInfo = WPLACE_COLORS.find(
+                                            (pc) =>
+                                              pc.hex.toUpperCase() ===
+                                              c.color.toUpperCase()
+                                          );
                                           if (colorInfo && colorInfo.locked) {
                                             premiumPixels += c.count;
                                           }
@@ -974,19 +1128,37 @@ export default function HeroSection() {
                                     <span>
                                       {t(
                                         'pixelGenerator.result.colorsUsed.free',
-                                        { count: usedColors.filter(c => {
-                                          const colorInfo = WPLACE_COLORS.find(pc => pc.hex.toUpperCase() === c.color);
-                                          return colorInfo && !colorInfo.locked;
-                                        }).length }
+                                        {
+                                          count: usedColors.filter((c) => {
+                                            const colorInfo =
+                                              WPLACE_COLORS.find(
+                                                (pc) =>
+                                                  pc.hex.toUpperCase() ===
+                                                  c.color
+                                              );
+                                            return (
+                                              colorInfo && !colorInfo.locked
+                                            );
+                                          }).length,
+                                        }
                                       )}
                                     </span>
                                     <span>
                                       {t(
                                         'pixelGenerator.result.colorsUsed.premium',
-                                        { count: usedColors.filter(c => {
-                                          const colorInfo = WPLACE_COLORS.find(pc => pc.hex.toUpperCase() === c.color);
-                                          return colorInfo && colorInfo.locked;
-                                        }).length }
+                                        {
+                                          count: usedColors.filter((c) => {
+                                            const colorInfo =
+                                              WPLACE_COLORS.find(
+                                                (pc) =>
+                                                  pc.hex.toUpperCase() ===
+                                                  c.color
+                                              );
+                                            return (
+                                              colorInfo && colorInfo.locked
+                                            );
+                                          }).length,
+                                        }
                                       )}
                                     </span>
                                     <ChevronDown className="w-4 h-4" />
@@ -996,37 +1168,56 @@ export default function HeroSection() {
                                   <div className="space-y-3">
                                     <div className="flex flex-wrap gap-1 p-2 bg-gray-50 rounded">
                                       {usedColors.map((colorInfo, index) => {
-                                        const wplaceColor = WPLACE_COLORS.find(c => c.hex.toUpperCase() === colorInfo.color);
+                                        const wplaceColor = WPLACE_COLORS.find(
+                                          (c) =>
+                                            c.hex.toUpperCase() ===
+                                            colorInfo.color
+                                        );
                                         return (
                                           <div key={index} className="relative">
                                             <button
                                               className={`w-6 h-6 rounded border-2 transition-all cursor-pointer hover:scale-110 ${
-                                                selectedColorInfo?.color === colorInfo.color
+                                                selectedColorInfo?.color ===
+                                                colorInfo.color
                                                   ? 'border-blue-500 scale-110'
                                                   : 'border-gray-300'
                                               }`}
-                                              style={{ backgroundColor: colorInfo.color }}
+                                              style={{
+                                                backgroundColor:
+                                                  colorInfo.color,
+                                              }}
                                               title={`${colorInfo.name} (${colorInfo.count} pixels)`}
-                                              onClick={() => setSelectedColorInfo(
-                                                selectedColorInfo?.color === colorInfo.color ? null : colorInfo
-                                              )}
+                                              onClick={() =>
+                                                setSelectedColorInfo(
+                                                  selectedColorInfo?.color ===
+                                                    colorInfo.color
+                                                    ? null
+                                                    : colorInfo
+                                                )
+                                              }
                                             />
                                             {wplaceColor?.locked && (
                                               <div className="absolute -bottom-1 -right-1 w-3 h-3 bg-gray-900 rounded-tl-md rounded-br-md flex items-center justify-center">
-                                                <Lock className="w-2 h-2 text-white" strokeWidth={3} />
+                                                <Lock
+                                                  className="w-2 h-2 text-white"
+                                                  strokeWidth={3}
+                                                />
                                               </div>
                                             )}
                                           </div>
                                         );
                                       })}
                                     </div>
-                                    
+
                                     {selectedColorInfo && (
                                       <div className="p-3 bg-blue-50 rounded-lg border border-blue-200">
                                         <div className="flex items-center space-x-3">
                                           <div
                                             className="w-8 h-8 rounded border-2 border-blue-500"
-                                            style={{ backgroundColor: selectedColorInfo.color }}
+                                            style={{
+                                              backgroundColor:
+                                                selectedColorInfo.color,
+                                            }}
                                           />
                                           <div className="flex-1">
                                             <div className="font-medium text-blue-900">
@@ -1036,8 +1227,15 @@ export default function HeroSection() {
                                               {selectedColorInfo.color}
                                             </div>
                                             <div className="text-sm text-blue-600">
-                                              Used in {selectedColorInfo.count.toLocaleString()} pixels
-                                              ({((selectedColorInfo.count / imageStats.total) * 100).toFixed(2)}%)
+                                              Used in{' '}
+                                              {selectedColorInfo.count.toLocaleString()}{' '}
+                                              pixels (
+                                              {(
+                                                (selectedColorInfo.count /
+                                                  imageStats.total) *
+                                                100
+                                              ).toFixed(2)}
+                                              %)
                                             </div>
                                           </div>
                                         </div>
@@ -1046,7 +1244,6 @@ export default function HeroSection() {
                                   </div>
                                 </CollapsibleContent>
                               </Collapsible>
-
 
                               <div
                                 className="border-2 border-gray-200 rounded-lg overflow-hidden bg-white relative aspect-square"
@@ -1168,41 +1365,65 @@ export default function HeroSection() {
                                       className="flex flex-row space-x-1"
                                     >
                                       <div className="flex items-center space-x-1">
-                                        <RadioGroupItem value="#000000" id="black" className="sr-only" />
+                                        <RadioGroupItem
+                                          value="#000000"
+                                          id="black"
+                                          className="sr-only"
+                                        />
                                         <Label
                                           htmlFor="black"
                                           className={`w-4 h-4 rounded-full border-2 cursor-pointer ${
-                                            gridColor === '#000000' ? 'border-blue-500 scale-110' : 'border-gray-300'
+                                            gridColor === '#000000'
+                                              ? 'border-blue-500 scale-110'
+                                              : 'border-gray-300'
                                           }`}
                                           style={{ backgroundColor: '#000000' }}
                                         />
                                       </div>
                                       <div className="flex items-center space-x-1">
-                                        <RadioGroupItem value="#FFFFFF" id="white" className="sr-only" />
+                                        <RadioGroupItem
+                                          value="#FFFFFF"
+                                          id="white"
+                                          className="sr-only"
+                                        />
                                         <Label
                                           htmlFor="white"
                                           className={`w-4 h-4 rounded-full border-2 cursor-pointer ${
-                                            gridColor === '#FFFFFF' ? 'border-blue-500 scale-110' : 'border-gray-300'
+                                            gridColor === '#FFFFFF'
+                                              ? 'border-blue-500 scale-110'
+                                              : 'border-gray-300'
                                           }`}
                                           style={{ backgroundColor: '#FFFFFF' }}
                                         />
                                       </div>
                                       <div className="flex items-center space-x-1">
-                                        <RadioGroupItem value="#ED1C24" id="red" className="sr-only" />
+                                        <RadioGroupItem
+                                          value="#ED1C24"
+                                          id="red"
+                                          className="sr-only"
+                                        />
                                         <Label
                                           htmlFor="red"
                                           className={`w-4 h-4 rounded-full border-2 cursor-pointer ${
-                                            gridColor === '#ED1C24' ? 'border-blue-500 scale-110' : 'border-gray-300'
+                                            gridColor === '#ED1C24'
+                                              ? 'border-blue-500 scale-110'
+                                              : 'border-gray-300'
                                           }`}
                                           style={{ backgroundColor: '#ED1C24' }}
                                         />
                                       </div>
                                       <div className="flex items-center space-x-1">
-                                        <RadioGroupItem value="#13E67B" id="green" className="sr-only" />
+                                        <RadioGroupItem
+                                          value="#13E67B"
+                                          id="green"
+                                          className="sr-only"
+                                        />
                                         <Label
                                           htmlFor="green"
                                           className={`w-4 h-4 rounded-full border-2 cursor-pointer ${
-                                            gridColor === '#13E67B' ? 'border-blue-500 scale-110' : 'border-gray-300'
+                                            gridColor === '#13E67B'
+                                              ? 'border-blue-500 scale-110'
+                                              : 'border-gray-300'
                                           }`}
                                           style={{ backgroundColor: '#13E67B' }}
                                         />
@@ -1222,22 +1443,35 @@ export default function HeroSection() {
                                       onClick={downloadWithGrid}
                                       className="flex flex-col items-center p-4 h-auto"
                                     >
-                                      <div className="text-sm font-medium">With Grid</div>
-                                      <div className="text-xs text-gray-500">Planning template</div>
+                                      <div className="text-sm font-medium">
+                                        With Grid
+                                      </div>
+                                      <div className="text-xs text-gray-500">
+                                        Planning template
+                                      </div>
                                     </Button>
-                                    <Button 
+                                    <Button
                                       onClick={downloadImage}
                                       className="flex flex-col items-center p-4 h-auto bg-blue-600 hover:bg-blue-700"
                                     >
-                                      <div className="text-sm font-medium">Clean Art</div>
-                                      <div className="text-xs text-blue-100">Final result</div>
+                                      <div className="text-sm font-medium">
+                                        Clean Art
+                                      </div>
+                                      <div className="text-xs text-blue-100">
+                                        Final result
+                                      </div>
                                     </Button>
                                   </div>
                                   <div className="text-center">
-                                    <Button 
-                                      variant="outline" 
+                                    <Button
+                                      variant="outline"
                                       className="w-full text-blue-600 border-blue-200 hover:bg-blue-50"
-                                      onClick={() => window.open('https://wplace.live', '_blank')}
+                                      onClick={() =>
+                                        window.open(
+                                          'https://wplace.live',
+                                          '_blank'
+                                        )
+                                      }
                                     >
                                       🌍 Open Wplace.live to Start Placing
                                     </Button>
@@ -1246,7 +1480,10 @@ export default function HeroSection() {
 
                                 <div className="bg-green-50 border border-green-200 rounded-lg p-3">
                                   <p className="text-xs text-center text-green-800">
-                                    💡 Pro tip: Use drag to pan around your pixel art • Zoom with controls above • Each pixel takes 30 seconds to place on Wplace.live
+                                    💡 Pro tip: Use drag to pan around your
+                                    pixel art • Zoom with controls above • Each
+                                    pixel takes 30 seconds to place on
+                                    Wplace.live
                                   </p>
                                 </div>
                               </div>
@@ -1258,7 +1495,10 @@ export default function HeroSection() {
                                 Your pixel art will appear here
                               </p>
                               <p className="text-gray-400 text-sm text-center max-w-md">
-                                Upload an image above to convert it into Wplace-ready pixel art. Perfect for collaborative art on the world's largest pixel canvas!
+                                Upload an image above to convert it into
+                                Wplace-ready pixel art. Perfect for
+                                collaborative art on the world's largest pixel
+                                canvas!
                               </p>
                               <div className="mt-4 flex items-center gap-2 text-xs text-gray-500">
                                 <span>✨ Instant conversion</span>
@@ -1275,16 +1515,16 @@ export default function HeroSection() {
                   </div>
                 </div>
 
-                <canvas 
-                  ref={canvasRef} 
-                  style={{ 
+                <canvas
+                  ref={canvasRef}
+                  style={{
                     display: 'none',
                     position: 'absolute',
                     left: '-9999px',
                     top: '-9999px',
                     visibility: 'hidden',
-                    opacity: 0
-                  }} 
+                    opacity: 0,
+                  }}
                 />
               </div>
             </div>

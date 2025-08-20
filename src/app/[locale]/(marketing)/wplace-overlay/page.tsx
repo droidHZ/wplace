@@ -13,7 +13,8 @@ export async function generateMetadata({
 
   return constructMetadata({
     title: 'Wplace Overlay Tool - Enhanced Canvas Experience',
-    description: 'Advanced overlay tool for Wplace.live canvas. Get precise pixel placement guides, grids, and templates for better collaborative art.',
+    description:
+      'Advanced overlay tool for Wplace.live canvas. Get precise pixel placement guides, grids, and templates for better collaborative art.',
     canonicalUrl: getUrlWithLocale('/wplace-overlay', locale),
   });
 }

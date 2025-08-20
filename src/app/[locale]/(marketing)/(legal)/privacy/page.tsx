@@ -1,6 +1,6 @@
 import { CustomPage } from '@/components/page/custom-page';
-import { constructMetadata } from '@/lib/metadata';
 import { console } from '@/lib/logger';
+import { constructMetadata } from '@/lib/metadata';
 import { getPage } from '@/lib/page/get-page';
 import { getUrlWithLocale } from '@/lib/urls/urls';
 import type { NextPageProps } from '@/types/next-page-props';

@@ -1,6 +1,5 @@
 'use client';
 
-import { console } from '@/lib/logger';
 import {
   DropdownMenu,
   DropdownMenuContent,
@@ -23,6 +22,7 @@ import { websiteConfig } from '@/config/website';
 import { useLocalePathname, useLocaleRouter } from '@/i18n/navigation';
 import { LOCALES, routing } from '@/i18n/routing';
 import { authClient } from '@/lib/auth-client';
+import { console } from '@/lib/logger';
 import { useLocaleStore } from '@/stores/locale-store';
 import { usePaymentStore } from '@/stores/payment-store';
 import type { User } from 'better-auth';

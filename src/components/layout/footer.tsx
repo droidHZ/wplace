@@ -3,9 +3,9 @@
 import Container from '@/components/layout/container';
 import { Logo } from '@/components/layout/logo';
 import { ModeSwitcherHorizontal } from '@/components/layout/mode-switcher-horizontal';
-import { Routes } from '@/routes';
 import { LocaleLink } from '@/i18n/navigation';
 import { cn } from '@/lib/utils';
+import { Routes } from '@/routes';
 import { useTranslations } from 'next-intl';
 import type React from 'react';
 
@@ -16,23 +16,23 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
     {
       title: 'Image to Pixel',
       href: Routes.ImageToPixel,
-      description: 'Convert your images to pixel art'
+      description: 'Convert your images to pixel art',
     },
     {
       title: 'Name Pixel',
       href: Routes.NamePixel,
-      description: 'Create pixel art from names'
+      description: 'Create pixel art from names',
     },
     {
       title: 'Location Gallery',
       href: Routes.LocationGallery,
-      description: 'Browse pixel art by location'
+      description: 'Browse pixel art by location',
     },
     {
       title: 'Wplace Overlay',
       href: Routes.WplaceOverlay,
-      description: 'View overlay tools for pixel art'
-    }
+      description: 'View overlay tools for pixel art',
+    },
   ];
 
   return (
@@ -50,7 +50,9 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
 
             {/* updated tagline for pixel art */}
             <p className="text-muted-foreground text-base">
-              Your ultimate platform for creating, converting, and exploring pixel art. Transform images, create art from names, and discover amazing pixel creations from around the world.
+              Your ultimate platform for creating, converting, and exploring
+              pixel art. Transform images, create art from names, and discover
+              amazing pixel creations from around the world.
             </p>
           </div>
 
@@ -65,7 +67,9 @@ export function Footer({ className }: React.HTMLAttributes<HTMLElement>) {
                     className="block p-4 rounded-lg border border-border hover:bg-accent hover:text-accent-foreground transition-colors"
                   >
                     <h4 className="font-medium mb-1">{tool.title}</h4>
-                    <p className="text-sm text-muted-foreground">{tool.description}</p>
+                    <p className="text-sm text-muted-foreground">
+                      {tool.description}
+                    </p>
                   </LocaleLink>
                 </div>
               ))}

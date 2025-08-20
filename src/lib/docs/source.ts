@@ -1,7 +1,7 @@
+import { console } from '@/lib/logger';
 import { createMDXSource } from '@fumadocs/content-collections';
 import { allDocs, allMetas } from 'content-collections';
 import { loader } from 'fumadocs-core/source';
-import { console } from '@/lib/logger';
 import * as LucideIcons from 'lucide-react';
 import { createElement } from 'react';
 import { docsI18nConfig } from './i18n';
