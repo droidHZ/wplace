@@ -1,0 +1,13 @@
+{
+  "functions": {
+    "app/api/**/*": {
+      "maxDuration": 60
+    }
+  },
+  "crons": [
+    {
+      "path": "/api/cron/monthly-points",
+      "schedule": "0 0 * * *"
+    }
+  ]
+}
