@@ -92,8 +92,6 @@ export default async function DocPage({ params }: DocPageProps) {
 
   return (
     <DocsPage
-      toc={page.data.toc}
-      full={page.data.full}
       tableOfContent={{
         style: 'clerk',
       }}
@@ -106,7 +104,7 @@ export default async function DocPage({ params }: DocPageProps) {
 
         {/* MDX Content */}
         <CustomMDXContent
-          code={page.data.body}
+          code={page.data.content}
           customComponents={{
             a: ({ href, ...props }: { href?: string; [key: string]: any }) => {
               const found = source.getPageByHref(href ?? '', {

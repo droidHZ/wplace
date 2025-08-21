@@ -51,7 +51,7 @@ export default async function TermsOfServicePage(props: NextPageProps) {
       title={page.title}
       description={page.description}
       date={page.date}
-      content={page.body}
+      content={page.content}
     />
   );
 }

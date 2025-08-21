@@ -1,12 +1,5 @@
-import path from 'path';
-import { DEFAULT_LOCALE, LOCALES } from '@/i18n/routing';
-import { console } from '@/lib/logger';
 import { defineCollection, defineConfig } from '@content-collections/core';
-import {
-  createDocSchema,
-  createMetaSchema,
-  transformMDX,
-} from '@fumadocs/content-collections/configuration';
+import { createMetaSchema } from '@fumadocs/content-collections/configuration';
 
 /**
  * 1. Content Collections documentation
@@ -22,11 +15,11 @@ const docs = defineCollection({
   directory: 'content/docs',
   include: '**/*.mdx',
   schema: (z) => ({
-    ...createDocSchema(z),
+    title: z.string(),
+    description: z.string().optional(),
     preview: z.string().optional(),
     index: z.boolean().default(false),
   }),
-  transform: transformMDX,
 });
 
 const metas = defineCollection({
@@ -62,31 +55,6 @@ export const pages = defineCollection({
     date: z.string().datetime(),
     published: z.boolean().default(true),
   }),
-  transform: async (data, context) => {
-    // Use Fumadocs transformMDX for consistent MDX processing
-    const transformedData = await transformMDX(data, context);
-
-    // Get the filename from the path
-    const filePath = data._meta.path;
-    const fileName = filePath.split(path.sep).pop() || '';
-
-    // Extract locale and base from filename
-    const { locale, base } = extractLocaleAndBase(fileName);
-    // console.log(`page processed: ${fileName}, base=${base}, locale=${locale}`);
-
-    // Create the slug and slugAsParams
-    const slug = `/pages/${base}`;
-    const slugAsParams = base;
-
-    return {
-      ...data,
-      locale,
-      slug,
-      slugAsParams,
-      body: transformedData.body,
-      toc: transformedData.toc,
-    };
-  },
 });
 
 /**
@@ -115,61 +83,7 @@ export const releases = defineCollection({
     version: z.string(),
     published: z.boolean().default(true),
   }),
-  transform: async (data, context) => {
-    // Use Fumadocs transformMDX for consistent MDX processing
-    const transformedData = await transformMDX(data, context);
-
-    // Get the filename from the path
-    const filePath = data._meta.path;
-    const fileName = filePath.split(path.sep).pop() || '';
-
-    // Extract locale and base from filename
-    const { locale, base } = extractLocaleAndBase(fileName);
-    // console.log(`release processed: ${fileName}, base=${base}, locale=${locale}`);
-
-    // Create the slug and slugAsParams
-    const slug = `/release/${base}`;
-    const slugAsParams = base;
-
-    return {
-      ...data,
-      locale,
-      slug,
-      slugAsParams,
-      body: transformedData.body,
-      toc: transformedData.toc,
-    };
-  },
 });
-
-/**
- * Helper function to extract locale and base name from filename
- * Handles filename formats:
- * - name -> locale: DEFAULT_LOCALE, base: name
- * - name.zh -> locale: zh, base: name
- *
- * @param fileName Filename without extension (already has .mdx removed)
- * @returns Object with locale and base name
- */
-function extractLocaleAndBase(fileName: string): {
-  locale: string;
-  base: string;
-} {
-  // Split filename into parts
-  const parts = fileName.split('.');
-
-  if (parts.length === 1) {
-    // Simple filename without locale: xxx
-    return { locale: DEFAULT_LOCALE, base: parts[0] };
-  }
-  if (parts.length === 2 && LOCALES.includes(parts[1])) {
-    // Filename with locale: xxx.zh
-    return { locale: parts[1], base: parts[0] };
-  }
-  // Unexpected format, use first part as base and default locale
-  console.warn(`Unexpected filename format: ${fileName}`);
-  return { locale: DEFAULT_LOCALE, base: parts[0] };
-}
 
 export default defineConfig({
   collections: [docs, metas, pages, releases],

@@ -57,12 +57,12 @@ export default async function ChangelogPage(props: NextPageProps) {
       <div className="mt-8">
         {releases.map((release) => (
           <ReleaseCard
-            key={release.slug}
+            key={release.version}
             title={release.title}
             description={release.description}
             date={release.date}
             version={release.version}
-            content={release.body}
+            content={release.content}
           />
         ))}
       </div>
