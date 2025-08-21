@@ -21,7 +21,10 @@
       "Bash(pnpm run:*)",
       "Bash(npx tsc:*)",
       "Bash(next lint)",
-      "Bash(npx next lint:*)"
+      "Bash(npx next lint:*)",
+      "Bash(npm run build)",
+      "mcp__ide__getDiagnostics",
+      "Bash(npm run:*)"
     ],
     "deny": []
   }

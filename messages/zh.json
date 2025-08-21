@@ -261,19 +261,6 @@
       "and": " 和 "
     }
   },
-  "BlogPage": {
-    "title": "博客",
-    "description": "来自我们的团队最新新闻和更新",
-    "subtitle": "来自我们的团队最新新闻和更新",
-    "author": "作者",
-    "categories": "分类",
-    "tableOfContents": "目录",
-    "readTime": "{minutes} 分钟阅读",
-    "all": "全部",
-    "noPostsFound": "没有找到文章",
-    "allPosts": "全部文章",
-    "morePosts": "更多文章"
-  },
   "DocsPage": {
     "toc": "目录",
     "search": "搜索文档",
@@ -283,8 +270,7 @@
     "nextPage": "下一页",
     "chooseLanguage": "选择语言",
     "title": "MkSaaS文档",
-    "homepage": "首页",
-    "blog": "博客"
+    "homepage": "首页"
   },
   "Marketing": {
     "navbar": {
@@ -293,9 +279,6 @@
       },
       "pricing": {
         "title": "价格"
-      },
-      "blog": {
-        "title": "博客"
       },
       "docs": {
         "title": "文档"
@@ -431,7 +414,6 @@
       "resources": {
         "title": "资源",
         "items": {
-          "blog": "博客",
           "changelog": "更新日志",
           "roadmap": "路线图"
         }

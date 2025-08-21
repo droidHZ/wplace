@@ -8,7 +8,6 @@ export type WebsiteConfig = {
   routes: RoutesConfig;
   auth: AuthConfig;
   i18n: I18nConfig;
-  blog: BlogConfig;
   mail: MailConfig;
   newsletter: NewsletterConfig;
   storage: StorageConfig;
@@ -77,13 +76,6 @@ export interface I18nConfig {
   locales: Record<string, { flag?: string; name: string }>;
 }
 
-/**
- * Blog configuration
- */
-export interface BlogConfig {
-  paginationSize: number;            // Number of posts per page
-  relatedPostsSize: number;          // Number of related posts to show
-}
 
 /**
  * Mail configuration

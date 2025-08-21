@@ -261,19 +261,6 @@
       "and": " and "
     }
   },
-  "BlogPage": {
-    "title": "Blog",
-    "description": "Latest news and updates from our team",
-    "subtitle": "Latest news and updates from our team",
-    "author": "Author",
-    "categories": "Categories",
-    "tableOfContents": "Table of Contents",
-    "readTime": "{minutes} min read",
-    "all": "All",
-    "noPostsFound": "No posts found",
-    "allPosts": "All Posts",
-    "morePosts": "More Posts"
-  },
   "DocsPage": {
     "toc": "Table of Contents",
     "search": "Search docs",
@@ -283,8 +270,7 @@
     "nextPage": "Next",
     "chooseLanguage": "Select language",
     "title": "MkSaaS Docs",
-    "homepage": "Homepage",
-    "blog": "Blog"
+    "homepage": "Homepage"
   },
   "Marketing": {
     "navbar": {
@@ -293,9 +279,6 @@
       },
       "pricing": {
         "title": "Pricing"
-      },
-      "blog": {
-        "title": "Blog"
       },
       "docs": {
         "title": "Docs"
@@ -431,7 +414,6 @@
       "resources": {
         "title": "Resources",
         "items": {
-          "blog": "Blog",
           "changelog": "Changelog",
           "roadmap": "Roadmap"
         }

@@ -1,7 +1,6 @@
 import { getLocalePathname } from '@/i18n/navigation';
 import { routing } from '@/i18n/routing';
 import { source } from '@/lib/docs/source';
-import { allCategories, allPosts } from 'content-collections';
 import type { MetadataRoute } from 'next';
 import type { Locale } from 'next-intl';
 import { getBaseUrl } from '../lib/urls/urls';
@@ -34,43 +33,18 @@ export default async function sitemap(): Promise<MetadataRoute.Sitemap> {
     })
   );
 
-  // Temporarily commented out other routes
-  // add categories
-  // sitemapList.push(
-  //   ...allCategories.flatMap((category: { slug: string }) =>
-  //     routing.locales.map((locale) => ({
-  //       url: getUrl(`/blog/category/${category.slug}`, locale),
-  //       lastModified: new Date(),
-  //       priority: 0.8,
-  //       changeFrequency: 'weekly' as const,
-  //     }))
-  //   )
-  // );
-
-  // add posts
-  // sitemapList.push(
-  //   ...allPosts.flatMap((post: { slugAsParams: string }) =>
-  //     routing.locales.map((locale) => ({
-  //       url: getUrl(`/blog/${post.slugAsParams}`, locale),
-  //       lastModified: new Date(),
-  //       priority: 0.8,
-  //       changeFrequency: 'weekly' as const,
-  //     }))
-  //   )
-  // );
-
   // add docs
-  // const docsParams = source.generateParams();
-  // sitemapList.push(
-  //   ...docsParams.flatMap((param) =>
-  //     routing.locales.map((locale) => ({
-  //       url: getUrl(`/docs/${param.slug.join('/')}`, locale),
-  //       lastModified: new Date(),
-  //       priority: 0.8,
-  //       changeFrequency: 'weekly' as const,
-  //     }))
-  //   )
-  // );
+  const docsParams = source.generateParams();
+  sitemapList.push(
+    ...docsParams.flatMap((param) =>
+      routing.locales.map((locale) => ({
+        url: getUrl(`/docs/${param.slug.join('/')}`, locale),
+        lastModified: new Date(),
+        priority: 0.8,
+        changeFrequency: 'weekly' as const,
+      }))
+    )
+  );
 
   return sitemapList;
 }
